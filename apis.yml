@@ -1,0 +1,188 @@
+aid: memfault
+name: Memfault
+description: Memfault is a device observability and reliability platform for connected products built on MCUs, embedded Linux,
+  and Android. The Memfault Cloud ingests device data (coredumps, logs, metrics, reboots) and provides issue grouping, alerting,
+  charting, fleet analytics, and over-the-air firmware updates. The Memfault REST API exposes organizations, projects, devices,
+  software, releases, deployments, issues, alerts, metrics, and chunk ingestion endpoints.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/memfault/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+type: Index
+access: 3rd-Party
+tags:
+- Alerts
+- Android
+- Crash Reporting
+- Device Management
+- Embedded
+- Embedded Linux
+- Firmware
+- IoT
+- Logging
+- MCU
+- Metrics
+- Observability
+- OTA
+- Reliability
+apis:
+- aid: memfault:memfault-cloud-rest-api
+  name: Memfault Cloud REST API
+  description: The Memfault Cloud REST API is the primary programmatic interface to the Memfault platform. It covers organization
+    and project administration, device management, software versions and releases, OTA deployments and cohorts, issues, alerts,
+    charts, metrics, and chunk ingestion.
+  humanURL: https://api-docs.memfault.com/
+  baseURL: https://api.memfault.com
+  tags:
+  - Alerts
+  - Devices
+  - Issues
+  - Metrics
+  - Organizations
+  - OTA
+  - Projects
+  - Releases
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/
+- aid: memfault:memfault-organizations-api
+  name: Memfault Organizations API
+  description: Manage Memfault organizations, users, and authentication tokens scoped to an organization.
+  humanURL: https://api-docs.memfault.com/#tag/Organizations
+  baseURL: https://api.memfault.com
+  tags:
+  - Administration
+  - Organizations
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Organizations
+- aid: memfault:memfault-projects-api
+  name: Memfault Projects API
+  description: Create and manage Memfault projects that group devices, software, and releases.
+  humanURL: https://api-docs.memfault.com/#tag/Projects
+  baseURL: https://api.memfault.com
+  tags:
+  - Administration
+  - Projects
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Projects
+- aid: memfault:memfault-devices-api
+  name: Memfault Devices API
+  description: List, search, and update devices including hardware version, software version, cohort membership, and metadata.
+  humanURL: https://api-docs.memfault.com/#tag/Devices
+  baseURL: https://api.memfault.com
+  tags:
+  - Devices
+  - Fleet Management
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Devices
+- aid: memfault:memfault-software-releases-api
+  name: Memfault Software and Releases API
+  description: Manage software types, software versions, OTA releases, deployments, and cohorts that target devices for updates.
+  humanURL: https://api-docs.memfault.com/#tag/Releases
+  baseURL: https://api.memfault.com
+  tags:
+  - Deployments
+  - OTA
+  - Releases
+  - Software
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Releases
+- aid: memfault:memfault-issues-api
+  name: Memfault Issues API
+  description: Retrieve and manage grouped issues created from device traces, coredumps, and reboots.
+  humanURL: https://api-docs.memfault.com/#tag/Issues
+  baseURL: https://api.memfault.com
+  tags:
+  - Crash Reporting
+  - Issues
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Issues
+- aid: memfault:memfault-alerts-api
+  name: Memfault Alerts API
+  description: Configure alert sources and review fired alerts for device fleet conditions and issue thresholds.
+  humanURL: https://api-docs.memfault.com/#tag/Alerts
+  baseURL: https://api.memfault.com
+  tags:
+  - Alerts
+  - Monitoring
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Alerts
+- aid: memfault:memfault-metrics-charts-api
+  name: Memfault Metrics and Charts API
+  description: Query timeseries metrics, custom charts, and aggregated fleet data collected from devices.
+  humanURL: https://api-docs.memfault.com/#tag/Metrics
+  baseURL: https://api.memfault.com
+  tags:
+  - Analytics
+  - Charts
+  - Metrics
+  properties:
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Metrics
+- aid: memfault:memfault-chunks-api
+  name: Memfault Chunks Ingestion API
+  description: Upload chunks of data (events, traces, coredumps, metrics) from devices into Memfault, typically called by
+    on-device SDKs or a customer-operated proxy.
+  humanURL: https://docs.memfault.com/docs/mcu/data-from-firmware-to-the-cloud/
+  baseURL: https://chunks.memfault.com
+  tags:
+  - Chunks
+  - Ingestion
+  - Telemetry
+  properties:
+  - type: Documentation
+    url: https://docs.memfault.com/docs/mcu/data-from-firmware-to-the-cloud/
+common:
+- type: Website
+  url: https://memfault.com/
+- type: Developer
+  url: https://docs.memfault.com/
+- type: Documentation
+  url: https://api-docs.memfault.com/
+- type: SDK
+  url: https://github.com/memfault/memfault-firmware-sdk
+- type: CLI
+  url: https://pypi.org/project/memfault-cli/
+- type: GitHub
+  url: https://github.com/memfault
+- type: Blog
+  url: https://interrupt.memfault.com/
+- type: Pricing
+  url: https://memfault.com/pricing/
+- type: StatusPage
+  url: https://status.memfault.com/
+- type: Support
+  url: https://docs.memfault.com/docs/general/support
+- type: PrivacyPolicy
+  url: https://memfault.com/legal/privacy-policy/
+- type: TermsOfService
+  url: https://memfault.com/legal/terms-of-service/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/memfault/
+- type: ChangeLog
+  url: https://docs.memfault.com/docs/releases
+- type: Integrations
+  url: https://docs.memfault.com/docs/platform/integrations
+integrations:
+- name: Slack
+- name: PagerDuty
+- name: Jira
+- name: Datadog
+- name: Microsoft Teams
+- name: Zendesk
+- name: AWS
+- name: Nordic Semiconductor
+- name: NXP
+- name: STMicroelectronics
+- name: Silicon Labs
+- name: Espressif
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
