@@ -170,6 +170,8 @@ common:
   url: https://docs.memfault.com/docs/releases
 - type: Integrations
   url: https://docs.memfault.com/docs/platform/integrations
+- type: LLMsTxt
+  url: https://docs.memfault.com/llms.txt
 integrations:
 - name: Slack
 - name: PagerDuty
