@@ -4,7 +4,7 @@ description: Memfault is a device observability and reliability platform for con
   and Android. The Memfault Cloud ingests device data (coredumps, logs, metrics, reboots) and provides issue grouping, alerting,
   charting, fleet analytics, and over-the-air firmware updates. The Memfault REST API exposes organizations, projects, devices,
   software, releases, deployments, issues, alerts, metrics, and chunk ingestion endpoints.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/memfault/refs/heads/main/apis.yml
 created: '2026-05-23'
 modified: '2026-05-23'
