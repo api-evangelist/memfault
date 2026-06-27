@@ -146,7 +146,7 @@ common:
   url: https://docs.memfault.com/
 - type: Documentation
   url: https://api-docs.memfault.com/
-- type: SDK
+- type: SDKs
   url: https://github.com/memfault/memfault-firmware-sdk
 - type: CLI
   url: https://pypi.org/project/memfault-cli/
@@ -170,7 +170,7 @@ common:
   url: https://docs.memfault.com/docs/releases
 - type: Integrations
   url: https://docs.memfault.com/docs/platform/integrations
-- type: LLMsTxt
+- type: LlmsText
   url: https://docs.memfault.com/llms.txt
 integrations:
 - name: Slack
