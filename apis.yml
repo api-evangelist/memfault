@@ -140,6 +140,10 @@ apis:
   - type: Documentation
     url: https://docs.memfault.com/docs/mcu/data-from-firmware-to-the-cloud/
 common:
+- type: DomainSecurity
+  url: security/memfault-domain-security.yml
+- type: Authentication
+  url: authentication/memfault-authentication.yml
 - type: Website
   url: https://memfault.com/
 - type: Developer
