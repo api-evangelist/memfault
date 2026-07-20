@@ -13,7 +13,7 @@ schemes:
   scheme: bearer
   bearerFormat: token
   description: |-
-    Organization Auth Token. Use "Authorization: Bearer oat_xxx" for automation
+    Organization Auth Token. Use "Authorization: Bearer [example key]" for automation
     and full API access.
   sources:
   - openapi/memfault-openapi.yml
