@@ -1,0 +1,139 @@
+openapi: 3.1.0
+info:
+  title: Memfault Cloud REST Auth Devices API
+  description: 'The Memfault Cloud REST API ingests device telemetry and exposes management for
+
+    organizations, projects, devices, cohorts, software, releases, deployments,
+
+    issues, and chunk ingestion. Endpoints are split across api.memfault.com (main),
+
+    chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
+
+    and ingress.memfault.com.
+
+    '
+  version: v0
+  contact:
+    name: Memfault
+    url: https://api-docs.memfault.com/
+servers:
+- url: https://api.memfault.com
+  description: Main API server
+- url: https://chunks.memfault.com
+  description: Chunks ingestion server
+- url: https://files.memfault.com
+  description: Files server (large uploads)
+security:
+- orgAuthToken: []
+- basicAuth: []
+tags:
+- name: Devices
+paths:
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/devices:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    get:
+      tags:
+      - Devices
+      summary: List devices
+      responses:
+        '200':
+          description: Paginated devices
+    post:
+      tags:
+      - Devices
+      summary: Create or upsert a device
+      responses:
+        '201':
+          description: Device created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/devices/{device_serial}:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    - $ref: '#/components/parameters/DeviceSerial'
+    get:
+      tags:
+      - Devices
+      summary: Get a device
+      responses:
+        '200':
+          description: Device
+    patch:
+      tags:
+      - Devices
+      summary: Update a device
+      responses:
+        '200':
+          description: Updated device
+    delete:
+      tags:
+      - Devices
+      summary: Delete a device
+      responses:
+        '204':
+          description: Deleted
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/devices/{device_serial}/attributes:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    - $ref: '#/components/parameters/DeviceSerial'
+    get:
+      tags:
+      - Devices
+      summary: Get device attributes
+      responses:
+        '200':
+          description: Attributes
+    patch:
+      tags:
+      - Devices
+      summary: Update device attributes
+      responses:
+        '200':
+          description: Updated attributes
+components:
+  parameters:
+    DeviceSerial:
+      name: device_serial
+      in: path
+      required: true
+      schema:
+        type: string
+    OrgSlug:
+      name: organization_slug
+      in: path
+      required: true
+      schema:
+        type: string
+    ProjectSlug:
+      name: project_slug
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    orgAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: token
+      description: 'Organization Auth Token. Use "Authorization: Bearer oat_xxx" for automation
+
+        and full API access.
+
+        '
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Email + password or Email + user API key via HTTP Basic auth.
+
+        '
+    projectKey:
+      type: apiKey
+      in: header
+      name: Memfault-Project-Key
+      description: 'Memfault Project Key used by devices and ingestion endpoints (chunks,
+
+        latest release lookup, events, coredumps).
+
+        '

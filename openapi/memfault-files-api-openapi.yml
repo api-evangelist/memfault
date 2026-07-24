@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Memfault Cloud REST Auth Files API
+  description: 'The Memfault Cloud REST API ingests device telemetry and exposes management for
+
+    organizations, projects, devices, cohorts, software, releases, deployments,
+
+    issues, and chunk ingestion. Endpoints are split across api.memfault.com (main),
+
+    chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
+
+    and ingress.memfault.com.
+
+    '
+  version: v0
+  contact:
+    name: Memfault
+    url: https://api-docs.memfault.com/
+servers:
+- url: https://api.memfault.com
+  description: Main API server
+- url: https://chunks.memfault.com
+  description: Chunks ingestion server
+- url: https://files.memfault.com
+  description: Files server (large uploads)
+security:
+- orgAuthToken: []
+- basicAuth: []
+tags:
+- name: Files
+paths:
+  /api/v0/upload:
+    servers:
+    - url: https://files.memfault.com
+    post:
+      tags:
+      - Files
+      summary: Request file upload URL
+      responses:
+        '200':
+          description: Upload URL returned
+  /api/v0/upload/coredump:
+    servers:
+    - url: https://files.memfault.com
+    post:
+      tags:
+      - Files
+      summary: Upload a coredump
+      responses:
+        '202':
+          description: Accepted
+  /api/v0/upload/bugreport:
+    servers:
+    - url: https://files.memfault.com
+    post:
+      tags:
+      - Files
+      summary: Upload a bug report
+      responses:
+        '202':
+          description: Accepted
+components:
+  securitySchemes:
+    orgAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: token
+      description: 'Organization Auth Token. Use "Authorization: Bearer oat_xxx" for automation
+
+        and full API access.
+
+        '
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Email + password or Email + user API key via HTTP Basic auth.
+
+        '
+    projectKey:
+      type: apiKey
+      in: header
+      name: Memfault-Project-Key
+      description: 'Memfault Project Key used by devices and ingestion endpoints (chunks,
+
+        latest release lookup, events, coredumps).
+
+        '

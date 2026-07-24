@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Memfault Cloud REST Auth API
+  description: 'The Memfault Cloud REST API ingests device telemetry and exposes management for
+
+    organizations, projects, devices, cohorts, software, releases, deployments,
+
+    issues, and chunk ingestion. Endpoints are split across api.memfault.com (main),
+
+    chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
+
+    and ingress.memfault.com.
+
+    '
+  version: v0
+  contact:
+    name: Memfault
+    url: https://api-docs.memfault.com/
+servers:
+- url: https://api.memfault.com
+  description: Main API server
+- url: https://chunks.memfault.com
+  description: Chunks ingestion server
+- url: https://files.memfault.com
+  description: Files server (large uploads)
+security:
+- orgAuthToken: []
+- basicAuth: []
+tags:
+- name: Auth
+paths:
+  /auth/me:
+    get:
+      tags:
+      - Auth
+      summary: Get authenticated user
+      responses:
+        '200':
+          description: Authenticated user
+  /auth/api_key:
+    get:
+      tags:
+      - Auth
+      summary: Get user API key
+      responses:
+        '200':
+          description: API key info
+    post:
+      tags:
+      - Auth
+      summary: Generate user API key
+      responses:
+        '201':
+          description: API key created
+    delete:
+      tags:
+      - Auth
+      summary: Revoke user API key
+      responses:
+        '204':
+          description: Revoked
+components:
+  securitySchemes:
+    orgAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: token
+      description: 'Organization Auth Token. Use "Authorization: Bearer oat_xxx" for automation
+
+        and full API access.
+
+        '
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Email + password or Email + user API key via HTTP Basic auth.
+
+        '
+    projectKey:
+      type: apiKey
+      in: header
+      name: Memfault-Project-Key
+      description: 'Memfault Project Key used by devices and ingestion endpoints (chunks,
+
+        latest release lookup, events, coredumps).
+
+        '

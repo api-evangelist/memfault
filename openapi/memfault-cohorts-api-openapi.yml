@@ -1,0 +1,134 @@
+openapi: 3.1.0
+info:
+  title: Memfault Cloud REST Auth Cohorts API
+  description: 'The Memfault Cloud REST API ingests device telemetry and exposes management for
+
+    organizations, projects, devices, cohorts, software, releases, deployments,
+
+    issues, and chunk ingestion. Endpoints are split across api.memfault.com (main),
+
+    chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
+
+    and ingress.memfault.com.
+
+    '
+  version: v0
+  contact:
+    name: Memfault
+    url: https://api-docs.memfault.com/
+servers:
+- url: https://api.memfault.com
+  description: Main API server
+- url: https://chunks.memfault.com
+  description: Chunks ingestion server
+- url: https://files.memfault.com
+  description: Files server (large uploads)
+security:
+- orgAuthToken: []
+- basicAuth: []
+tags:
+- name: Cohorts
+paths:
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/cohorts:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    get:
+      tags:
+      - Cohorts
+      summary: List cohorts
+      responses:
+        '200':
+          description: Paginated cohorts
+    post:
+      tags:
+      - Cohorts
+      summary: Create a cohort
+      responses:
+        '201':
+          description: Cohort created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/cohorts/{cohort_slug}:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    - name: cohort_slug
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Cohorts
+      summary: Get a cohort
+      responses:
+        '200':
+          description: Cohort
+    patch:
+      tags:
+      - Cohorts
+      summary: Update a cohort
+      responses:
+        '200':
+          description: Updated cohort
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/cohorts/{cohort_slug}/devices:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    - name: cohort_slug
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Cohorts
+      summary: List devices in a cohort
+      responses:
+        '200':
+          description: Paginated devices
+    patch:
+      tags:
+      - Cohorts
+      summary: Move devices into a cohort
+      responses:
+        '200':
+          description: Moved
+components:
+  parameters:
+    OrgSlug:
+      name: organization_slug
+      in: path
+      required: true
+      schema:
+        type: string
+    ProjectSlug:
+      name: project_slug
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    orgAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: token
+      description: 'Organization Auth Token. Use "Authorization: Bearer oat_xxx" for automation
+
+        and full API access.
+
+        '
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Email + password or Email + user API key via HTTP Basic auth.
+
+        '
+    projectKey:
+      type: apiKey
+      in: header
+      name: Memfault-Project-Key
+      description: 'Memfault Project Key used by devices and ingestion endpoints (chunks,
+
+        latest release lookup, events, coredumps).
+
+        '

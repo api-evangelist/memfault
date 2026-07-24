@@ -1,0 +1,102 @@
+openapi: 3.1.0
+info:
+  title: Memfault Cloud REST Auth Projects API
+  description: 'The Memfault Cloud REST API ingests device telemetry and exposes management for
+
+    organizations, projects, devices, cohorts, software, releases, deployments,
+
+    issues, and chunk ingestion. Endpoints are split across api.memfault.com (main),
+
+    chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
+
+    and ingress.memfault.com.
+
+    '
+  version: v0
+  contact:
+    name: Memfault
+    url: https://api-docs.memfault.com/
+servers:
+- url: https://api.memfault.com
+  description: Main API server
+- url: https://chunks.memfault.com
+  description: Chunks ingestion server
+- url: https://files.memfault.com
+  description: Files server (large uploads)
+security:
+- orgAuthToken: []
+- basicAuth: []
+tags:
+- name: Projects
+paths:
+  /api/v0/organizations/{organization_slug}/projects:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    get:
+      tags:
+      - Projects
+      summary: List projects in an organization
+      responses:
+        '200':
+          description: Paginated projects
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    get:
+      tags:
+      - Projects
+      summary: Get a project
+      responses:
+        '200':
+          description: Project
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/api_key:
+    parameters:
+    - $ref: '#/components/parameters/OrgSlug'
+    - $ref: '#/components/parameters/ProjectSlug'
+    get:
+      tags:
+      - Projects
+      summary: Get the project key
+      responses:
+        '200':
+          description: Project key
+components:
+  parameters:
+    OrgSlug:
+      name: organization_slug
+      in: path
+      required: true
+      schema:
+        type: string
+    ProjectSlug:
+      name: project_slug
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    orgAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: token
+      description: 'Organization Auth Token. Use "Authorization: Bearer oat_xxx" for automation
+
+        and full API access.
+
+        '
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Email + password or Email + user API key via HTTP Basic auth.
+
+        '
+    projectKey:
+      type: apiKey
+      in: header
+      name: Memfault-Project-Key
+      description: 'Memfault Project Key used by devices and ingestion endpoints (chunks,
+
+        latest release lookup, events, coredumps).
+
+        '
