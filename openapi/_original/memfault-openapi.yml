@@ -1,0 +1,472 @@
+openapi: 3.1.0
+info:
+  title: Memfault Cloud REST API
+  description: |
+    The Memfault Cloud REST API ingests device telemetry and exposes management for
+    organizations, projects, devices, cohorts, software, releases, deployments,
+    issues, and chunk ingestion. Endpoints are split across api.memfault.com (main),
+    chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
+    and ingress.memfault.com.
+  version: "v0"
+  contact:
+    name: Memfault
+    url: https://api-docs.memfault.com/
+servers:
+  - url: https://api.memfault.com
+    description: Main API server
+  - url: https://chunks.memfault.com
+    description: Chunks ingestion server
+  - url: https://files.memfault.com
+    description: Files server (large uploads)
+security:
+  - orgAuthToken: []
+  - basicAuth: []
+tags:
+  - name: Auth
+  - name: Organizations
+  - name: Projects
+  - name: Cohorts
+  - name: Devices
+  - name: Software
+  - name: Releases
+  - name: Deployments
+  - name: Issues
+  - name: Chunks
+  - name: Files
+paths:
+  /auth/me:
+    get:
+      tags: [Auth]
+      summary: Get authenticated user
+      responses:
+        "200":
+          description: Authenticated user
+  /auth/api_key:
+    get:
+      tags: [Auth]
+      summary: Get user API key
+      responses:
+        "200":
+          description: API key info
+    post:
+      tags: [Auth]
+      summary: Generate user API key
+      responses:
+        "201":
+          description: API key created
+    delete:
+      tags: [Auth]
+      summary: Revoke user API key
+      responses:
+        "204":
+          description: Revoked
+  /api/v0/organizations:
+    get:
+      tags: [Organizations]
+      summary: List organizations
+      responses:
+        "200":
+          description: Paginated organizations
+  /api/v0/organizations/{organization_slug}/projects:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+    get:
+      tags: [Projects]
+      summary: List projects in an organization
+      responses:
+        "200":
+          description: Paginated projects
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Projects]
+      summary: Get a project
+      responses:
+        "200":
+          description: Project
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/api_key:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Projects]
+      summary: Get the project key
+      responses:
+        "200":
+          description: Project key
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/cohorts:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Cohorts]
+      summary: List cohorts
+      responses:
+        "200":
+          description: Paginated cohorts
+    post:
+      tags: [Cohorts]
+      summary: Create a cohort
+      responses:
+        "201":
+          description: Cohort created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/cohorts/{cohort_slug}:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - name: cohort_slug
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Cohorts]
+      summary: Get a cohort
+      responses:
+        "200":
+          description: Cohort
+    patch:
+      tags: [Cohorts]
+      summary: Update a cohort
+      responses:
+        "200":
+          description: Updated cohort
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/cohorts/{cohort_slug}/devices:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - name: cohort_slug
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Cohorts]
+      summary: List devices in a cohort
+      responses:
+        "200":
+          description: Paginated devices
+    patch:
+      tags: [Cohorts]
+      summary: Move devices into a cohort
+      responses:
+        "200":
+          description: Moved
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/devices:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Devices]
+      summary: List devices
+      responses:
+        "200":
+          description: Paginated devices
+    post:
+      tags: [Devices]
+      summary: Create or upsert a device
+      responses:
+        "201":
+          description: Device created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/devices/{device_serial}:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - $ref: "#/components/parameters/DeviceSerial"
+    get:
+      tags: [Devices]
+      summary: Get a device
+      responses:
+        "200":
+          description: Device
+    patch:
+      tags: [Devices]
+      summary: Update a device
+      responses:
+        "200":
+          description: Updated device
+    delete:
+      tags: [Devices]
+      summary: Delete a device
+      responses:
+        "204":
+          description: Deleted
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/devices/{device_serial}/attributes:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - $ref: "#/components/parameters/DeviceSerial"
+    get:
+      tags: [Devices]
+      summary: Get device attributes
+      responses:
+        "200":
+          description: Attributes
+    patch:
+      tags: [Devices]
+      summary: Update device attributes
+      responses:
+        "200":
+          description: Updated attributes
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/software_types:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Software]
+      summary: List software types
+      responses:
+        "200":
+          description: Paginated software types
+    post:
+      tags: [Software]
+      summary: Create a software type
+      responses:
+        "201":
+          description: Created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/software_types/{software_type}/software_versions:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - name: software_type
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Software]
+      summary: List software versions
+      responses:
+        "200":
+          description: Paginated software versions
+    post:
+      tags: [Software]
+      summary: Create a software version
+      responses:
+        "201":
+          description: Created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/releases:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Releases]
+      summary: List releases
+      responses:
+        "200":
+          description: Paginated releases
+    post:
+      tags: [Releases]
+      summary: Create a release
+      responses:
+        "201":
+          description: Created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/releases/{release_version}:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - name: release_version
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Releases]
+      summary: Get a release
+      responses:
+        "200":
+          description: Release
+    patch:
+      tags: [Releases]
+      summary: Update a release
+      responses:
+        "200":
+          description: Updated
+    delete:
+      tags: [Releases]
+      summary: Delete a release
+      responses:
+        "204":
+          description: Deleted
+  /api/v0/releases/latest:
+    get:
+      tags: [Releases]
+      summary: Get the latest release for a device
+      description: Used by devices (with project key auth) to discover the latest OTA release.
+      security:
+        - projectKey: []
+      parameters:
+        - name: hardware_version
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: software_type
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: current_version
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: device_serial
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Latest release info
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/deployments:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Deployments]
+      summary: List deployments
+      responses:
+        "200":
+          description: Paginated deployments
+    post:
+      tags: [Deployments]
+      summary: Create a deployment
+      responses:
+        "201":
+          description: Created
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/deployments/{deployment_id}:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - name: deployment_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Deployments]
+      summary: Get a deployment
+      responses:
+        "200":
+          description: Deployment
+    patch:
+      tags: [Deployments]
+      summary: Update a deployment
+      responses:
+        "200":
+          description: Updated
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/issues:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+    get:
+      tags: [Issues]
+      summary: List issues
+      responses:
+        "200":
+          description: Paginated issues
+  /api/v0/organizations/{organization_slug}/projects/{project_slug}/issues/{issue_id}:
+    parameters:
+      - $ref: "#/components/parameters/OrgSlug"
+      - $ref: "#/components/parameters/ProjectSlug"
+      - name: issue_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Issues]
+      summary: Get an issue
+      responses:
+        "200":
+          description: Issue
+    patch:
+      tags: [Issues]
+      summary: Update an issue
+      responses:
+        "200":
+          description: Updated issue
+  /api/v0/chunks/{device_serial}:
+    servers:
+      - url: https://chunks.memfault.com
+    parameters:
+      - $ref: "#/components/parameters/DeviceSerial"
+    post:
+      tags: [Chunks]
+      summary: Upload device chunk
+      description: Ingest a chunk of telemetry data from a device. Authenticated with the project key.
+      security:
+        - projectKey: []
+      responses:
+        "202":
+          description: Accepted
+  /api/v0/upload:
+    servers:
+      - url: https://files.memfault.com
+    post:
+      tags: [Files]
+      summary: Request file upload URL
+      responses:
+        "200":
+          description: Upload URL returned
+  /api/v0/upload/coredump:
+    servers:
+      - url: https://files.memfault.com
+    post:
+      tags: [Files]
+      summary: Upload a coredump
+      responses:
+        "202":
+          description: Accepted
+  /api/v0/upload/bugreport:
+    servers:
+      - url: https://files.memfault.com
+    post:
+      tags: [Files]
+      summary: Upload a bug report
+      responses:
+        "202":
+          description: Accepted
+components:
+  parameters:
+    OrgSlug:
+      name: organization_slug
+      in: path
+      required: true
+      schema:
+        type: string
+    ProjectSlug:
+      name: project_slug
+      in: path
+      required: true
+      schema:
+        type: string
+    DeviceSerial:
+      name: device_serial
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    orgAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: token
+      description: |
+        Organization Auth Token. Use "Authorization: Bearer oat_xxx" for automation
+        and full API access.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: |
+        Email + password or Email + user API key via HTTP Basic auth.
+    projectKey:
+      type: apiKey
+      in: header
+      name: Memfault-Project-Key
+      description: |
+        Memfault Project Key used by devices and ingestion endpoints (chunks,
+        latest release lookup, events, coredumps).

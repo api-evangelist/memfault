@@ -1,0 +1,34 @@
+{
+  "provider": "memfault",
+  "sources": [
+    "memfault-auth-api-openapi.yml",
+    "memfault-chunks-api-openapi.yml",
+    "memfault-cohorts-api-openapi.yml",
+    "memfault-deployments-api-openapi.yml",
+    "memfault-devices-api-openapi.yml",
+    "memfault-files-api-openapi.yml",
+    "memfault-issues-api-openapi.yml",
+    "memfault-organizations-api-openapi.yml",
+    "memfault-projects-api-openapi.yml",
+    "memfault-releases-api-openapi.yml",
+    "memfault-software-api-openapi.yml"
+  ],
+  "outputs": [
+    "memfault-auth-api-openapi.yml",
+    "memfault-chunks-api-openapi.yml",
+    "memfault-cohorts-api-openapi.yml",
+    "memfault-deployments-api-openapi.yml",
+    "memfault-devices-api-openapi.yml",
+    "memfault-files-api-openapi.yml",
+    "memfault-issues-api-openapi.yml",
+    "memfault-organizations-api-openapi.yml",
+    "memfault-projects-api-openapi.yml",
+    "memfault-releases-api-openapi.yml",
+    "memfault-software-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
