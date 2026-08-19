@@ -1,0 +1,126 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Deployments API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Deployments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List deployments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/deployments",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List deployments"
+        },
+        {
+          "info": {
+            "name": "Create a deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/deployments",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a deployment"
+        },
+        {
+          "info": {
+            "name": "Get a deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/deployments/:deployment_id",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "deployment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a deployment"
+        },
+        {
+          "info": {
+            "name": "Update a deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/deployments/:deployment_id",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "deployment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a deployment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

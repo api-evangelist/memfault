@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Projects API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List projects in an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List projects in an organization"
+        },
+        {
+          "info": {
+            "name": "Get a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a project"
+        },
+        {
+          "info": {
+            "name": "Get the project key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/api_key",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the project key"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

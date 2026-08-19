@@ -1,0 +1,210 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Devices API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/devices",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List devices"
+        },
+        {
+          "info": {
+            "name": "Create or upsert a device",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/devices",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create or upsert a device"
+        },
+        {
+          "info": {
+            "name": "Get a device",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/devices/:device_serial",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "device_serial",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a device"
+        },
+        {
+          "info": {
+            "name": "Update a device",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/devices/:device_serial",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "device_serial",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a device"
+        },
+        {
+          "info": {
+            "name": "Delete a device",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/devices/:device_serial",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "device_serial",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a device"
+        },
+        {
+          "info": {
+            "name": "Get device attributes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/devices/:device_serial/attributes",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "device_serial",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get device attributes"
+        },
+        {
+          "info": {
+            "name": "Update device attributes",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/devices/:device_serial/attributes",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "device_serial",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update device attributes"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

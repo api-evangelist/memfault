@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Files API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request file upload URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/upload"
+          },
+          "docs": "Request file upload URL"
+        },
+        {
+          "info": {
+            "name": "Upload a coredump",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/upload/coredump"
+          },
+          "docs": "Upload a coredump"
+        },
+        {
+          "info": {
+            "name": "Upload a bug report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/upload/bugreport"
+          },
+          "docs": "Upload a bug report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

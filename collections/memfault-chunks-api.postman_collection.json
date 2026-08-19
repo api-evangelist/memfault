@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "e07082c0-6c3b-4a8b-b54e-6e0d7d9a8e11",
+      "name": "Chunks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e598b982-45f4-47cf-80fb-774a0002769c",
+          "name": "Upload device chunk",
+          "request": {
+            "name": "Upload device chunk",
+            "description": {
+              "content": "Ingest a chunk of telemetry data from a device. Authenticated with the project key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "chunks",
+                ":device_serial"
+              ],
+              "host": [
+                "{{api-v0-chunks-device_serial-Url}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "device_serial",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Memfault-Project-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "becc7716-b0f8-4724-acc7-0e84095caf83",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "chunks",
+                    ":device_serial"
+                  ],
+                  "host": [
+                    "{{api-v0-chunks-device_serial-Url}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "device_serial",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Memfault-Project-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.memfault.com",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://chunks.memfault.com",
+      "key": "api-v0-chunks-device_serial-Url"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d09e52ae-f975-4d2e-82d4-291bace98bef",
+    "name": "Memfault Cloud REST Auth Chunks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Memfault Cloud REST API ingests device telemetry and exposes management for\norganizations, projects, devices, cohorts, software, releases, deployments,\nissues, and chunk ingestion. Endpoints are split across api.memfault.com (main),\nchunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),\nand ingress.memfault.com.\n\n\nContact Support:\n Name: Memfault",
+      "type": "text/plain"
+    }
+  }
+}

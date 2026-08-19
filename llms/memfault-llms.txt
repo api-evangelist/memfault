@@ -1,0 +1,954 @@
+# Memfault Docs
+
+> Memfault is a device reliability platform for embedded systems. These docs cover OTA update management, crash and metrics analysis, fleet monitoring, and the Memfault cloud platform, with SDKs for MCU, Android, and Linux devices.
+
+
+## docs
+
+
+### android
+
+- [AOSP SDK Architecture](/docs/android/android-architecture.md): The purpose of the Memfault Android SDK
+- [Android SDK Configuration](/docs/android/android-bort.md): The purpose of the Memfault Android SDK
+- [Bort CLI](/docs/android/android-bort-cli.md): Bort CLI is a command-line utility for preparing the AOSP integration,
+- [Android Bug Reports](/docs/android/android-bug-reports.md): The Memfault SDK can trigger the collection and upload of
+- [Android SDK Built-in Metrics](/docs/android/android-builtin-metrics.md): The Android SDK contains built-in support for collecting many different types of
+- [Android Custom Metrics](/docs/android/android-custom-metrics.md): Memfault will collect various AOSP metrics automatically once integrated, like
+- [Android Data Scrubbing](/docs/android/android-data-scrubbing.md): Memfault provides configurable, on-device & server-side scrubbing of Android
+- [Android SDK Features](/docs/android/android-features.md): The Memfault Android SDK collects many types of data from a device. Below is a
+- [AOSP Integration Guide](/docs/android/android-getting-started-guide.md): The following guide will walk you through step-by-step how to integrate and
+- [Android Logging](/docs/android/android-logging.md): Memfault Caliper collects logs from every
+- [Android Metrics](/docs/android/android-metrics.md): Memfault's Android SDK makes it easy to collect all kinds of metrics to diagnose
+- [Android Multi-Device Support](/docs/android/android-multi-device-support.md): Your product might consist of multiple Android devices connected together, where
+- [Android OTA Update Client](/docs/android/android-ota-update-client.md): The Android SDK includes a full OTA Update Client, which uses the
+- [AOSP patches](/docs/android/android-patches.md): Why Patch AOSP?
+- [Client-Side Rate Limiting](/docs/android/android-rate-limiting.md): To bypass client-side rate limits for development, the Android SDK can be placed
+- [Android Reboot Reason Tracking](/docs/android/android-reboot-events.md): The Memfault Android SDK can track when your device reboots and upload an event
+- [Android OTA Integration Guide](/docs/android/android-releases-integration-guide.md): This tutorial covers how to manage your Android over-the-air update flow with
+- [Troubleshooting](/docs/android/android-troubleshooting.md): troubleshooting}
+- [AOSP SDK Update Guide](/docs/android/android-updating-sdk.md): The following guide walks through how to update the Memfault AOSP SDK in your
+- [Demoing Memfault with the Android Quickstart APK](/docs/android/bort-lite.md): The Android Quickstart APK is designed to try out the
+- [Introduction](/docs/android/introduction.md): Memfault is a Device-centric Fleet observability and OTA platform, that can be
+- [Uploading Android Diagnostic Data](/docs/android/uploading-android-diagnostics.md): Through the Android SDK
+- [Uploading Android Symbol Files](/docs/android/uploading-android-symbol-files.md): To upload symbol files, the Memfault CLI must be used.
+
+### best-practices
+
+- [Debugging Android Battery Life with Memfault](/docs/best-practices/android-battery-debugging.md): Battery life on Android devices is a complex topic: There are many factors which
+- [Using CoAP with Memfault](/docs/best-practices/coap-with-memfault.md): The Constrained Application Protocol (CoAP) is a UDP-based protocol that is
+- [CRA Compliance with Memfault](/docs/best-practices/cra-compliance.md): The Cyber Resilience Act (CRA) is an EU regulation that will require
+- [Best Practices for High Accuracy Location with nRF Cloud](/docs/best-practices/location-services-ground-fix.md): Endpoint: POST /v1/location/ground-fix
+- [Using Memfault with Low-Bandwidth Devices](/docs/best-practices/low-bandwidth-devices.md): IoT devices are being deployed all over the world, and many of these devices are
+- [Using MQTT with Memfault](/docs/best-practices/mqtt-with-memfault.md): There are many protocols to communicate with your remote devices and backend
+- [Message Routing Service](/docs/best-practices/mrs-quickstart.md): End-to-end guide to ingesting nRF Cloud Message Routing Service traffic from a CoAP device, using the Asset Tracker Template as a worked example.
+- [OTA - Updating Multiple Components](/docs/best-practices/ota-components.md): This guide is intended for users who have already integrated the Memfault SDK
+- [OTA - Deploying an Update to Production](/docs/best-practices/ota-deploy-process.md): OTA Release Rollout Process Recommendations
+- [OTA - Rollback & Downgrades](/docs/best-practices/ota-downgrades.md): Downgrading by Upgrading
+- [Using Software Type to Separate Telemetry by Component](/docs/best-practices/software-type-for-telemetry.md): Many devices run multiple firmware components - for example, a main application
+- [Using UDP with Memfault](/docs/best-practices/udp-with-memfault.md): Memfault servers do not accept UDP transfers natively, and the ideal method to
+- [Using Device Vitals to Create Useful and Powerful Dashboards](/docs/best-practices/using-device-vitals-in-dashboards.md): Introduction
+
+### category
+
+- [Android](/docs/category/android.md)
+- [Automation, CI & CD](/docs/category/automation-ci--cd.md)
+- [Best Practices](/docs/category/best-practices.md)
+- [Forwarding Data to Memfault](/docs/category/forwarding-data-to-memfault.md)
+- [Integration Guides](/docs/category/integration-guides.md)
+- [Linux](/docs/category/linux.md)
+- [MCU](/docs/category/mcu.md)
+- [Other Guides](/docs/category/other-guides.md)
+- [Platform](/docs/category/platform.md)
+- [Quickstart](/docs/category/quickstart.md)
+- [Reference](/docs/category/reference.md)
+- [Reference](/docs/category/reference-1.md)
+- [Subsystem Guides](/docs/category/subsystem-guides.md)
+- [Tutorials](/docs/category/tutorials.md)
+- [Web App](/docs/category/web-app.md)
+
+### ci
+
+- [Add a device to a cohort with the API](/docs/ci/add-device-to-cohort-api.md): This short tutorial walks through an example flow for adding a device to a
+- [API and CLI authentication](/docs/ci/authentication.md): Accessing resources via the Memfault API or the
+- [completion](/docs/ci/cli/completion.md): Description
+- [console](/docs/ci/cli/console.md): Description
+- [deploy-release](/docs/ci/cli/deploy-release.md): Description
+- [post-chunk](/docs/ci/cli/post-chunk.md): Description
+- [upload-android-app-symbols](/docs/ci/cli/upload-android-app-symbols.md): Description
+- [upload-aosp-symbols](/docs/ci/cli/upload-aosp-symbols.md): Description
+- [upload-bugreport](/docs/ci/cli/upload-bugreport.md): Description
+- [upload-coredump](/docs/ci/cli/upload-coredump.md): Description
+- [upload-custom-data-recording](/docs/ci/cli/upload-custom-data-recording.md): Description
+- [upload-elf-coredump](/docs/ci/cli/upload-elf-coredump.md): Description
+- [upload-elf-symbols](/docs/ci/cli/upload-elf-symbols.md): Description
+- [upload-mar](/docs/ci/cli/upload-mar.md): Description
+- [upload-mcu-symbols](/docs/ci/cli/upload-mcu-symbols.md): Description
+- [upload-ota-payload](/docs/ci/cli/upload-ota-payload.md): Description
+- [upload-software-version-sbom](/docs/ci/cli/upload-software-version-sbom.md): Description
+- [upload-symbols](/docs/ci/cli/upload-symbols.md): Description
+- [upload-xed](/docs/ci/cli/upload-xed.md): Description
+- [upload-yocto-symbols](/docs/ci/cli/upload-yocto-symbols.md): Description
+- [Installation](/docs/ci/install-memfault-cli.md): The Memfault CLI tool is a command-line program for integrating
+- [Memfault Command](/docs/ci/memfault-cli-root.md): memfault
+- [Automatically upload symbols and deploy releases from CI](/docs/ci/uploading-symbols.md): Uploading symbol files and deploying OTA updates from your CI system is a useful
+
+### legacy-nrfcloud
+
+- [Account and team management](/docs/legacy-nrfcloud/account-overview.md): This section collects pages related to managing nRF Cloud accounts, billing, and
+- [Adding and removing devices](/docs/legacy-nrfcloud/adding-removing-devices.md): This page explains the process of adding devices to your nRF Cloud team and
+- [Additional nRF Cloud resources](/docs/legacy-nrfcloud/additional-resources.md): This page collects cloud-related documentation and tools on other Nordic
+- [Overview of the nRF Cloud APIs](/docs/legacy-nrfcloud/api-overview.md): This section introduces the nRF Cloud REST, MQTT, and CoAP APIs.
+- [Choosing a protocol](/docs/legacy-nrfcloud/choosing-protocol.md): This page outlines the main differences between CoAP and MQTT, so you can choose
+- [Managing claimed devices using the APIs](/docs/legacy-nrfcloud/claiming-device-ownership-api.md): This guide explains how to use the Provisioning Service for claiming device
+- [Managing claimed devices using the nRF Cloud portal](/docs/legacy-nrfcloud/claiming-device-ownership-portal.md): This page explains how to create provisioning groups and claim devices using the
+- [Claiming devices using the nRF Cloud Utils](/docs/legacy-nrfcloud/claiming-device-ownership-utils.md): This guide explains how to leverage nRF Cloud Utils to streamline the reading of
+- [nRF Cloud CoAP API endpoints](/docs/legacy-nrfcloud/coap-endpoints.md): This document describes how to interact with nRF Cloud services using the CoAP
+- [Connecting a device using CoAP](/docs/legacy-nrfcloud/coap-guide.md): This end-to-end guide demonstrates how to perform the following operations:
+- [nRF Cloud CoAP API](/docs/legacy-nrfcloud/coap-overview.md): This page provides an overview of the nRF Cloud CoAP API.
+- [Device Authentication & Security](/docs/legacy-nrfcloud/device-auth-security.md)
+- [Securely generating credentials for nRF91 Series devices](/docs/legacy-nrfcloud/device-credentials.md): Once you have finished getting started with an nRF91 Series
+- [Organizing devices with the nRF Cloud APIs](/docs/legacy-nrfcloud/device-groups-api.md): This page explains device group and tag operations in the nRF Cloud REST API.
+- [Organizing devices in nRF Cloud](/docs/legacy-nrfcloud/device-groups-overview.md): Device groups let you organize and manage access to your devices. A device
+- [Organizing devices in the nRF Cloud portal](/docs/legacy-nrfcloud/device-groups-portal.md): This page explains how to organize devices and work with device groups and tags
+- [Device ID](/docs/legacy-nrfcloud/device-id.md): The device ID is a unique identifier for your device. For devices
+- [Collecting data](/docs/legacy-nrfcloud/device-messages.md): A device can send application data to nRF Cloud, which stores the data for 30
+- [Device management overview](/docs/legacy-nrfcloud/device-overview.md): Device management enables you to keep your device fleet operating in an
+- [Device Properties](/docs/legacy-nrfcloud/device-properties.md)
+- [Security and credentials](/docs/legacy-nrfcloud/device-security.md): nRF Cloud device security involves the concepts of authentication and
+- [Device shadow](/docs/legacy-nrfcloud/device-shadow.md): A device shadow or digital twin refers to a JSON document in nRF Cloud that
+- [Device States & Messaging](/docs/legacy-nrfcloud/device-states-messaging.md)
+- [Device types](/docs/legacy-nrfcloud/device-types.md): This document describes the types of devices nRF Cloud supports, and how they
+- [Fleet Management](/docs/legacy-nrfcloud/fleet-management.md)
+- [Overview of firmware update over-the-air](/docs/legacy-nrfcloud/fota-overview.md): The nRF Cloud firmware-over-the-air (FOTA)
+- [Updating device firmware](/docs/legacy-nrfcloud/fota-tutorial.md): This guide shows how to use the nRF Cloud
+- [Getting started with nRF Cloud](/docs/legacy-nrfcloud/getting-started.md): Use this page as a starting point to learn about nRF Cloud.
+- [nRF Cloud Identity Service](/docs/legacy-nrfcloud/identity-overview.md): The nRF Cloud Identity Service lets you authenticate the device in your
+- [Overview of Legacy nRF Cloud](/docs/legacy-nrfcloud/introduction.md): Legacy nRF Cloud contains the original nRF Cloud documentation prior to the
+- [JWT authentication for nRF Cloud](/docs/legacy-nrfcloud/jwt-authentication.md): This guide demonstrates how to authenticate requests to the nRF Cloud REST API
+- [API Migration Guide](/docs/legacy-nrfcloud/location-vendor-migration.md): Field-by-field guide for migrating cell and Wi-Fi location requests from Unwired Labs to the nRF Cloud Ground Fix API.
+- [Using the nRF Cloud Message Routing Service](/docs/legacy-nrfcloud/message-routing.md): This guide explains how to use the nRF Cloud Message Routing Service through the
+- [Message Routing Service](/docs/legacy-nrfcloud/message-routing-overview.md): The nRF Cloud Message Routing Service allows you to forward device messages from
+- [Overview of the nRF Cloud MQTT API](/docs/legacy-nrfcloud/mqtt-overview.md): MQTT is a
+- [nRF Cloud MQTT topics](/docs/legacy-nrfcloud/mqtt-topics.md): The MQTT API uses topics to send or receive data.
+- [Device onboarding to nRF Cloud](/docs/legacy-nrfcloud/onboarding.md): This page explains the different methods of device onboarding, meaning
+- [Provisioning configuration through the APIs](/docs/legacy-nrfcloud/provisioning-configuration-api.md): This guide explains how to define the provisioning configuration of your claimed
+- [Provisioning configuration through the nRF Cloud portal](/docs/legacy-nrfcloud/provisioning-configuration-portal.md): This guide explains how to manually define the provisioning configuration of
+- [Provisioning Service](/docs/legacy-nrfcloud/provisioning-overview.md): The Provisioning Service allows you to securely provision your Nordic
+- [Receiving messages from nRF Cloud](/docs/legacy-nrfcloud/receiving-messages.md): This guide explains how to receive messages from nRF Cloud using the Message
+- [Introduction to the REST API](/docs/legacy-nrfcloud/rest-overview.md): This section introduces the nRF Cloud REST APIs. If you are not familiar with
+- [Transforming JSON responses](/docs/legacy-nrfcloud/rest-transforms.md): The REST API allows you to retrieve information about a device using the
+- [nRF Cloud support](/docs/legacy-nrfcloud/support.md): DevZone is Nordic Semiconductor's official
+- [Introduction to Teams](/docs/legacy-nrfcloud/teams-overview.md): The nRF Cloud Teams feature lets you set up teams of users who can interact
+- [Teams example use case](/docs/legacy-nrfcloud/teams-use-case.md): This is a fictional use case to demonstrate how the teams feature might be used.
+- [Managing tokens and keys](/docs/legacy-nrfcloud/tokens-and-keys.md): This page explains how to generate and use different
+- [Troubleshooting](/docs/legacy-nrfcloud/troubleshooting.md)
+- [Onboarding troubleshooting](/docs/legacy-nrfcloud/troubleshooting-onboarding.md): This page explains the most common errors you might encounter when trying to
+- [Troubleshooting provisioning errors](/docs/legacy-nrfcloud/troubleshooting-provisioning.md): This page explains how to recover from errors in the secure provisioning
+- [Using the device shadow](/docs/legacy-nrfcloud/using-device-shadow.md): This page explains operations with the device shadow.
+- [Using provisioning rules](/docs/legacy-nrfcloud/using-provisioning-rules.md): This guide explains how to use
+- [Verifying attestation tokens](/docs/legacy-nrfcloud/verify-attestation-token.md): This guide explains how to generate attestation tokens for Nordic Semiconductor
+- [Working with Teams](/docs/legacy-nrfcloud/working-with-teams.md): Account management has moved to the new unified account experience. For more
+
+### linux
+
+- [Additional Guides](/docs/linux/additional.md)
+- [Forwarding `collectd` Metrics to Memfault](/docs/linux/collectd.md): memfaultd has the ability to ingest metrics from collectd
+- [Linux Coredumps](/docs/linux/coredumps.md): Introduction
+- [Cross-Compiling memfaultd](/docs/linux/cross-compile-memfaultd.md): Most embedded devices have very limited resources (disk, cpu, ram). Instead of
+- [Example Images](/docs/linux/example-images.md)
+- [Forwarding Logs to Memfault with Fluent-bit](/docs/linux/fluent-bit.md): On systems that are not using journald, Fluent-bit can
+- [Memfault OTA for any Linux device](/docs/linux/generic-ota.md): This guide will walk you through using the Memfault OTA API to update any Linux
+- [Integration Guides](/docs/linux/integration-guides.md)
+- [Introduction](/docs/linux/introduction.md): Ship hardware products at the speed of software. With Memfault, you can
+- [Locally Debugging Linux coredumps with GDB](/docs/linux/linux-coredump-elf-with-gdb.md): To analyze coredumps, the Memfault UI offers some analyses right in the browser,
+- [Linux Logging](/docs/linux/logging.md): Introduction
+- [Comparison: Memfault OTA and Self-Hosted hawkBit](/docs/linux/memfault-hawkbit-comparison.md): Memfault's Embedded Linux Over-the-Air updates (OTA) solution is hawkBit Direct
+- [Linux Metrics](/docs/linux/metrics.md): Introduction
+- [Memfault OTA for Linux with SWUpdate](/docs/linux/ota.md): This guide describes how to use Memfault OTA for devices that are updated with
+- [OTA Updates](/docs/linux/ota-docs.md)
+- [Python Exceptions & Custom Traces](/docs/linux/python-custom-traces.md): Introduction
+- [QEMU Example](/docs/linux/qemu-example.md): This tutorial will use a Docker container to walk you through building a Yocto
+- [Quickstart Installer](/docs/linux/quickstart-installer.md): Memfault provides an installer script for memfaultd designed to enable quickly
+- [Raspberry Pi Example](/docs/linux/raspberrypi-example.md): This tutorial will walk you through building a complete Linux system image for a
+- [Linux Reboot Reason Tracking](/docs/linux/reboot-reason-tracking.md): Introduction
+- [Reference: memfault-device-info](/docs/linux/reference-memfault-device-info.md): Useful links:
+- [Reference: memfaultctl CLI](/docs/linux/reference-memfaultctl-cli.md): Useful links:
+- [memfaultd Built-in Metrics](/docs/linux/reference-memfaultd-builtin-metrics.md): Built-in System Metric Collection
+- [Reference: memfaultd Configuration](/docs/linux/reference-memfaultd-configuration.md): Useful links:
+- [Subsystem Guides](/docs/linux/subsystem-guides.md)
+- [Manually Uploading Linux Diagnostic Data](/docs/linux/uploading-linux-diagnostics.md): Through the Linux SDK / memfaultd
+- [Yocto Integration Guide](/docs/linux/yocto-integration-guide.md): This guide will cover integrating the Memfault Linux SDK into systems built with
+
+### mcu
+
+- [ARM Cortex-M Integration Guide](/docs/mcu/arm-cortex-m-guide.md): Integrate Memfault for a Cortex-M device.
+- [ARM Cortex-A/R Integration Guide](/docs/mcu/arm-cortex-r-guide.md): Integrate Memfault for a Cortex-R or Cortex-A device.
+- [ARM GCC Getting Started Guide](/docs/mcu/arm-gcc-guide.md): This tutorial will go over integrating the
+- [ARM GCC Getting Started Guide](/docs/mcu/arm-gcc-guide-coredumps.md): This tutorial will go over integrating the panics component of the
+- [ARM IAR Getting Started Guide](/docs/mcu/arm-iar-guide.md): This tutorial will go over integrating the panics component of the
+- [Infineon ModusToolbox™ Getting Started Guide for PSoC™ 6](/docs/mcu/arm-infineon-modustoolbox-guide.md): Integrate Memfault using Infineon's ModusToolbox on the PSoC™ 6
+- [ARM MDK Getting Started Guide](/docs/mcu/arm-mdk-guide.md): This tutorial will go over integrating the panics component of the
+- [NXP MCUXpresso Getting Started Guide for ARM](/docs/mcu/arm-nxp-mcuxpresso-guide.md): Integrate Memfault with NXP MCUXpresso SDK for i.MX RT.
+- [Memfault Chunk Relay](/docs/mcu/chunk-relay.md): Not all devices have a direct connection to the internet. In such cases, a
+- [Compact Logs](/docs/mcu/compact-logs.md): This tutorial will cover how to enable the compact log feature in the
+- [Debugging MCU coredumps with GDB](/docs/mcu/coredump-elf-with-gdb.md): To analyze coredumps, the Memfault UI offers a slew of analyses right in the
+- [Coredumps and Sensitive Data](/docs/mcu/coredump-sensitive-data.md): Managing Sensitive Data in Coredumps
+- [Coredump Collection](/docs/mcu/coredumps.md): This tutorial will cover integrating the coredump collection functionality of
+- [MCU Custom Data Recording](/docs/mcu/custom-data-recording.md): Memfault's Custom Data Recording (CDR) feature allows you to upload
+- [DA1469x SDK Integration Guide](/docs/mcu/da1469x-sdk-guide.md): Integrate Memfault for Dialog's DA1469x product family.
+- [Data from Firmware to the Cloud](/docs/mcu/data-from-firmware-to-the-cloud.md): Introduction
+- [Async Data Source Mode](/docs/mcu/data-source-async-access.md): Occasionally, you may want to read data from one of the data sources the
+- [Deep Sleep Support](/docs/mcu/deep-sleep.md): The Memfault SDK stores Heartbeats, Event data, and the Logging circular buffer
+- [Demo CLI](/docs/mcu/demo-cli.md)
+- [Demo CLI for ESP-IDF](/docs/mcu/demo-cli-cmds-esp-idf.md): The demo CLI lets you explore features of the SDK components before integrating
+- [Demo CLI for Zephyr RTOS](/docs/mcu/demo-cli-cmds-ncs-zephyr.md): The demo CLI lets you explore features of the SDK components before integrating
+- [Demo CLI for Other Platforms](/docs/mcu/demo-cli-cmds-other-platforms.md): The demo CLI lets you explore features of the SDK components before integrating
+- [Embedded Integration Guide](/docs/mcu/embedded-self-serve.md)
+- [Espressif ESP32 ESP-IDF Integration Guide](/docs/mcu/espressif-esp32-guide.md): Integrate Memfault on Espressif's ESP32 ESP-IDF platform.
+- [Event Serialization](/docs/mcu/event-serialization-overview.md): This article walks through the serialization strategy used by the Memfault
+- [Event Timestamps](/docs/mcu/event-timestamps.md): By default, events (Reboot Reasons,
+- [Post Chunks with Memfault CLI](/docs/mcu/export-chunks-over-console.md): In the following tutorial we will discuss how to use the Memfault SDK data
+- [MCU Frequently Asked Questions](/docs/mcu/faq.md): Common questions when integrating the Memfault Firmware SDK
+- [Forwarding Chunks via Golioth](/docs/mcu/golioth-chunks-forwarding.md): Golioth is an IoT platform that provides cloud services
+- [Heap Allocation Tracking](/docs/mcu/heap-stats.md): This feature of the Memfault SDK provides insight into heap allocations when
+- [Introduction](/docs/mcu/introduction.md): Memfault is a complete device monitoring solution integrating into any embedded
+- [MCU Logging](/docs/mcu/logging.md): When debugging an issue, it is often useful to inspect what the system was doing
+- [MCU Built-in Metrics](/docs/mcu/mcu-builtin-metrics.md): The Memfault SDK automatically collects a number of metrics without any
+- [Memfault MCUmgr Command Group](/docs/mcu/mcumgr.md): Introduction
+- [Memfault Diagnostic Service](/docs/mcu/mds.md): Introduction
+- [MCU Metrics](/docs/mcu/metrics-api.md): There are many system health vitals that are useful to track aside from
+- [Nordic nRF Connect SDK Integration Guide](/docs/mcu/nordic-nrf-connect-sdk-guide.md): Integrate Memfault using the Nordic Semiconductor's nRF Connect SDK.
+- [Nordic nRF7002 Integration Guide](/docs/mcu/nrf-7002-guide.md): Integrate Memfault on an Nordic nRF7002
+- [Modem Firmware Update (FOTA)](/docs/mcu/nrf-modem-fota.md): Nordic Semiconductor's cellular SoCs contain two independently-updateable
+- [Pinnacle™ 100 Modem Integration Guide](/docs/mcu/pinnacle-100-guide.md): Integrate Memfault using the Ezurio (Laird Connectivity) Pinnacle™ 100 Cellular Modem.
+- [PlatformIO + ESP-IDF Integration Guide](/docs/mcu/platformio-esp-idf-guide.md): Integrate Memfault for a ESP32 using ESP-IDF and PlatformIO.
+- [Nordic Bluetooth Quickstart (nRF52/nRF53/nRF54 Series)](/docs/mcu/quickstart-bluetooth.md): This Quickstart Guide gets you up and running on nRF Cloud for observability,
+- [Nordic Cellular Quickstart (nRF91 Series)](/docs/mcu/quickstart-cellular.md): This quickstart guide shows how to integrate and verify the Memfault SDK with
+- [Quickstart Espressif ESP32](/docs/mcu/quickstart-esp32.md): This quickstart guide shows how to integrate and verify the Memfault SDK with
+- [MCU Reboot Reasons](/docs/mcu/reboot-reason-tracking.md): There are many reasons a device may reboot in the field - whether it be due to a
+- [MCU OTA Integration Guide](/docs/mcu/releases-integration-guide.md): This tutorial covers how to manage your firmware over-the-air update flow with
+- [Memfault RTOS Support](/docs/mcu/rtos-analysis.md): Memfault automatically detects what RTOS your system is running. For uploaded
+- [Enabling and Disabling Memfault at Runtime](/docs/mcu/runtime-control.md): This guide covers how to enable and disable Memfault at runtime (vs. at
+- [Managing the Memfault SDK as a Git Submodule](/docs/mcu/sdk-submodule.md): Installing the SDK as a Git Submodule
+- [Local Testing](/docs/mcu/self-serve-local-testing.md): In this guide we will walk through how to add some initial data collection
+- [Test SDK Integration with Self Test](/docs/mcu/self-test.md): To help with integration, the SDK has an optional Self Test component. The self
+- [STM32CubeIDE Integration Guide](/docs/mcu/stm32cubeide-guide.md): Integrate Memfault using the STM32CubeIDE.
+- [Symbol Files & Build Ids](/docs/mcu/symbol-file-build-ids.md): Learn how Memfault identifies symbols to match them to versions.
+- [Post Chunks with GDB](/docs/mcu/test-data-collection-with-gdb.md): In the following tutorial we will walk through how to post chunks directly to
+- [Test Patterns for Chunks Endpoint](/docs/mcu/test-patterns-for-chunks-endpoint.md): In this tutorial, we demonstrate how to send a Heartbeat event for a device with
+- [Trace Events](/docs/mcu/trace-events.md): We recommend capturing a full coredump trace in case the system encounters a
+- [Watchdog Instrumentation](/docs/mcu/watchdogs.md): This document describes the necessary integration details to capture coredumps
+- [Xilinx A53 Standalone SDK Guide](/docs/mcu/xilinx-a53-sdk-guide.md): This tutorial will go over integrating the
+- [Zephyr Integration Guide](/docs/mcu/zephyr-guide.md): Integrate Memfault on Zephyr RTOS.
+
+### nrfcloud
+
+- [Device Onboarding](/docs/nrfcloud/device-onboarding.md): Device onboarding is how you securely register Nordic nRF91 Series chips into
+- [Lifetime FOTA](/docs/nrfcloud/fota-lifetime.md): Keep connected products secure — for the lifetime of the device.
+- [New FOTA Experience](/docs/nrfcloud/fota-transition.md): nRF Cloud now uses Memfault's OTA engine to deliver firmware over-the-air (FOTA)
+- [Location Services](/docs/nrfcloud/location-services-transition.md): Step-by-step guide for migrating nRF Cloud Location Services from service tokens to organization auth tokens.
+- [Transition Guide](/docs/nrfcloud/transition-guide.md): In July 2025, Nordic Semiconductor acquired Memfault. As a result, nRF Cloud's
+
+### platform
+
+- [Access Control: Teams and Roles](/docs/platform/access-control-teams-roles.md): This document shows how Organization Admins may manage access control in an
+- [AI Features](/docs/platform/ai-features.md): To enable faster, more robust insights,  includes some features
+- [Alerts](/docs/platform/alerts.md): The alerts feature sends a notification when monitored devices satisfy a given
+- [Audit Log](/docs/platform/audit-log.md): Audit Log is only available on Memfault's Enterprise plan.
+- [Charts and Cards](/docs/platform/charts-and-cards.md): Memfault charts allow you to proactively monitor any smart device, anywhere.
+- [CVE Scanning](/docs/platform/cve-scanning.md): Scan your firmware's SBOM components against known CVEs and triage each CVE.
+- [Dashboards](/docs/platform/dashboards.md): Configurable Dashboards
+- [Project Keys (aka Data Routes)](/docs/platform/data-routes.md): Devices (or components) that talk to Memfault need to identify themselves
+- [Device Inventory](/docs/platform/device-inventory.md): The Device Inventory provides access to all devices in your project. It can be
+- [Device Inventory & Fleet Management](/docs/platform/device-inventory-fleet-management.md)
+- [Fleet Sampling](/docs/platform/fleet-sampling.md): As your fleet grows, it becomes more costly to send, process and store the data
+- [IMEI Management](/docs/platform/imeis.md): nRF Cloud IMEI services provide support functions for your manufacturing and
+- [Inspecting a Device](/docs/platform/inspecting-a-device.md): Individual Devices can be accessed through many parts of the web
+- [Integration Hub](/docs/platform/integration-hub.md)
+- [Introduction to Memfault](/docs/platform/introduction.md): is a cloud platform that allows you and your team to continuously
+- [Issue Management](/docs/platform/issue-management.md): What is an Issue?
+- [Issues & Traces](/docs/platform/issues-traces.md)
+- [Jira Integration](/docs/platform/jira-integration.md): This integration is designed for Jira Cloud only. It is not compatible with
+- [Memfault Location Services](/docs/platform/location-services.md): Location Services give your devices fast, accurate, low-power
+- [MCP Server](/docs/platform/mcp-server.md): The  MCP (Model Context Protocol) server lets MCP-compatible AI
+- [Core Metrics & Device Vitals](/docs/platform/memfault-core-metrics.md): Memfault provides support for a set of core metrics that apply to a wide range
+- [Metric Reports](/docs/platform/metric-reports.md): What is a Metric Report?
+- [Metric Configuration](/docs/platform/metrics.md): Metrics are a way to proactively monitor any smart device. They power parts of
+- [Metrics](/docs/platform/metrics-overview.md)
+- [Notifications](/docs/platform/notifications.md): Concept: Sources and Targets
+- [Notifications](/docs/platform/notifications-category.md)
+- [Organization Auth Tokens](/docs/platform/organization-auth-tokens.md): Organization Auth Tokens allow access of the organization's resources
+- [Over-the-Air Updates (OTA)](/docs/platform/ota.md): Memfault provides secure and scalable updates for all IoT devices
+- [Processing Log](/docs/platform/processing-log.md): The  Processing
+- [How to Organize Devices](/docs/platform/projects-and-fleets.md): Categorization Schemes
+- [Rate Limiting](/docs/platform/rate-limiting.md): Memfault employs rate limiting to prevent malfunctioning devices from causing
+- [SBOM (Software Bill of Materials)](/docs/platform/sbom.md): What is an SBOM
+- [Uploading SBOMs from CI/CD](/docs/platform/sbom-ci-cd.md): This guide shows how to upload an SBOM artifact to
+- [Security Services](/docs/platform/security-services.md)
+- [Software Version & Hardware Version](/docs/platform/software-version-hardware-version.md): Hardware Version
+- [Single Sign-On (SSO)](/docs/platform/sso.md): This guide covers Memfault's Single Sign-On (or SSO) offering. SSO allows users
+- [Memfault terminology](/docs/platform/terminology.md): Artifact
+- [Trace Details](/docs/platform/trace-details.md): To get a deeper understanding of an Issue, one can view the details of a Trace
+- [User Management](/docs/platform/user-management.md): Organization Admins can add, remove, view and update
+- [Users & Teams](/docs/platform/users-teams.md)
+- [Webhooks](/docs/platform/webhooks.md): You can use a generic Webhook target to receive structured notifications from
+
+### reference
+
+- [Fullscreen dashboards](/docs/reference/fullscreen-dashboards.md): Overview
+- [Location Services Quickstart](/docs/reference/location-services-quickstart.md): <!--
+- [Migrate legacy nRF Cloud Alerts to Trace Events](/docs/reference/reference-alerts-migration.md): This guide covers migrating legacy nRF Cloud SDK Alerts
+- [Reference: Debug Information Symbols](/docs/reference/reference-debug-symbols.md): Debug info, when attached to the executable, lets debuggers like GDB report on a
+- [Domains and Network Configuration](/docs/reference/reference-fqdn.md): The Memfault SDKs always initiate traffic to the platform. No sessions are ever
+- [HTTP Response Status Codes](/docs/reference/reference-http-response-status-codes.md): Overview
+- [Reference: Reboot Reason IDs](/docs/reference/reference-reboot-reason-ids.md): This page documents identifiers for different reboot reasons.
+
+### troubleshooting
+
+- [Data Transfer Troubleshooting](/docs/troubleshooting/data-transfer-troubleshooting.md)
+- [Uploaded symbol file is invalid](/docs/troubleshooting/uploading-symbol-file-is-invalid.md): Problem
+
+## changelog
+
+The latest changes to the Memfault product and service
+
+- [Memfault Changelog](/changelog.md): The latest changes to the Memfault product and service
+
+### 2019
+
+- [Reprocessing Traces, Cohort Overview, and Help](/changelog/2019/05/17/reprocessing-data-and-help.md): Reprocessing Traces
+- [Improved Device Metrics and Docs](/changelog/2019/05/21/device-metrics-and-docs.md): Device Metric Table Improvements
+- [Cohort Details Page](/changelog/2019/05/27/cohort-details.md): You can now dive into a Cohort and see the Distribution of Devices, Releases,
+- [Unified Query Parameter APIs, Cohort Settings, and More](/changelog/2019/05/31/unified-api-and-cohort-settings.md): Unified Query Parameter APIs
+- [Release Info, Notes, Sorting, and a Register View](/changelog/2019/06/01/release-info-notes-sorting-register-views.md): Detailed Release Information
+- [Distributions, Filtering, Recent Events, and More](/changelog/2019/06/20/distributions-filtering-recent-events-and-more.md): Cohort/Release/Hardware Distributions for Issues
+- [Schedules, More RTOS Support, MPU Analyzer, and More](/changelog/2019/07/23/schedules-threadx-releases-more.md): Update Schedules
+- [Issue Regressions, Email Alerts, Rust, Keil RTX5, and Even More](/changelog/2019/08/07/issue-regressions-and-alerts.md): Issue Regressions
+- [Events Performance Improvements](/changelog/2019/08/16/events-performance.md): It is now faster to view the Events browser when filtering by Devices and
+- [An Amazing Globals Viewer and Much More](/changelog/2019/08/21/paging-traces.md): This update is all about an improved Issue / Trace viewing experience. With
+- [Cohort Search and Improved Globals Viewer](/changelog/2019/08/28/search-cohorts-and-globals-viewer.md): Search for Cohorts by Name
+- [Issue Comments and Even More Speed](/changelog/2019/09/12/issue-comments-and-performance.md): Issue Comments
+- [ChibiOS, Complex Devices, and More](/changelog/2019/09/25/complex-devices.md): ChibiOS Support
+- [Status Updates](/changelog/2019/10/09/coredump-status.md): Coredump Processing Status
+- [General Improvements](/changelog/2019/10/20/general-improvements.md): - Improve FreeRTOS coredump processing
+- [Streamlined API Uploads](/changelog/2019/11/01/chunk-transport.md): Chunk Transport
+- [Alerts](/changelog/2019/11/08/alerts.md): Trigger alerts based on Heartbeat event metrics, and filter them by metric value
+- [General Improvements](/changelog/2019/11/11/general-improvements.md): - Improve performance of the dashboard and APIs
+- [FreeRTOS Stack High Water Marks and Selective Alerts](/changelog/2019/11/22/freertos-stack-high-water-and-disable-alerts.md): FreeRTOS Stack High Water Marks
+- [Zephyr RTOS, QuantumLeap RTEF, and Better Cohorts](/changelog/2019/12/10/zephyr-quantumleap-ignore-traces.md): Zephyr RTOS and QuantumLeap RTEF
+
+### 2020
+
+- [Issue Filtering and Improved Trace Analysis](/changelog/2020/01/07/issue-filtering-isr-analysis.md): Happy 2020! We hope you are as excited for the new year as we are at Memfault.
+- [New Jira Integration](/changelog/2020/01/27/jira-integration.md): In this update, we've added Jira integration, the ability to filter Issues by
+- [Improved Issue Filtering](/changelog/2020/02/05/better-issue-filtering.md): Improved Issue Filtering and Sorting
+- [Issues Improvements](/changelog/2020/03/05/issue-detail-redo.md): Issue Detail Page Updates
+- [March 2020](/changelog/2020/03/30.md): Issue Reason Filter Multi-Select
+- [April 2020](/changelog/2020/04/20.md): Memfault Changelog for April
+- [May 2020](/changelog/2020/05/27.md): General
+- [June 2020](/changelog/2020/06/30.md): Reboot Reason Tracking
+- [July 2020](/changelog/2020/07/31.md): Support for Complex Upgrade Paths
+- [August 2020](/changelog/2020/08/31.md): Custom Metric Dashboards
+- [September 2020](/changelog/2020/09/30.md): Memfault Firmware Update CDN
+- [October 2020](/changelog/2020/10/31.md): General Improvements
+- [November 2020](/changelog/2020/11/30.md): Logging Improvements
+- [December 2020](/changelog/2020/12/31.md): Memfault's Android SDK hits v3.0!
+
+### 2021
+
+- [January 2021](/changelog/2021/01/31.md): Issue Merging
+- [February 2021](/changelog/2021/02/28.md): Android Timeline Improvements
+- [March 2021](/changelog/2021/03/31.md): User Management Improvements
+- [April 2021](/changelog/2021/04/30.md): Memfault Now Offering Free Trial
+- [May 2021](/changelog/2021/05/31.md): Heartbeat Metric Improvements
+- [June 2021](/changelog/2021/06/30.md): Nordic nRF Connect SDK Memfault Integration
+- [July 2021](/changelog/2021/07/31.md): Compact Logs in Memfault's Firmware SDK
+- [November 2021](/changelog/2021/11/30.md): Comparison Mode for Metric Charts
+- [December 2021](/changelog/2021/12/31.md): Device Sets
+
+### 2022
+
+- [January 2022](/changelog/2022/01/31.md): Improved OTA with Version Matrix and Delta Releases
+- [February 2022](/changelog/2022/02/28.md): Android SDK Bort 4.0
+- [March 2022](/changelog/2022/03/31.md): Improved Device Search
+- [April 2022](/changelog/2022/04/30.md): More Documentation
+- [May 2022](/changelog/2022/05/31.md): Memfault OTA for Embedded Linux
+- [June 2022](/changelog/2022/06/30.md): Normalized Charts
+- [July 2022](/changelog/2022/07/31.md): Linux SDK 0.2.0
+- [August 2022](/changelog/2022/08/31.md): Linux SDK 0.3.0 - Metrics and Diagnostics Data
+- [September 2022](/changelog/2022/09/30.md): Linux SDK 1.0 with Coredump support
+- [October 2022](/changelog/2022/10/31.md): Best Practices: Tracking Battery Life
+- [November 2022](/changelog/2022/11/30.md): Debug Devices with Custom Data Recordings
+- [December 2022](/changelog/2022/12/31.md): Fleet Sampling
+
+### 2023
+
+- [January 2023](/changelog/2023/01/31.md): Including Linked Devices in the Search Results
+- [February 2023](/changelog/2023/02/28.md): Memfault Support for RISC-V on ESP32-C3 Devices
+- [March 2023](/changelog/2023/03/31.md): New Access Control Permissions: Teams and Roles
+- [April 2023](/changelog/2023/04/30.md): Server-Side Support for Developer Mode
+- [May 2023](/changelog/2023/05/31.md): Simplified Debugging with Device Timezone in Memfault
+- [June 2023](/changelog/2023/06/30.md): Metric Charts: Comparison by Software Version or Cohort
+- [July 2023](/changelog/2023/07/31.md): Bulk Issue Merging improvements
+- [August 2023](/changelog/2023/08/31.md): New Data Aggregation for Metric Charts: Percentiles
+- [September 2023](/changelog/2023/09/30.md): Software versions displayed in Device Timeline
+- [October 2023](/changelog/2023/10/31.md): Export lists of Devices as a CSV
+- [November 2023](/changelog/2023/11/30.md): Build your own dashboards in Memfault
+- [December 2023](/changelog/2023/12/31.md): Improved Processing Log: More data, better discoverability, more tools
+
+### 2024
+
+- [January 2024](/changelog/2024/01/31.md): Get all the data you need in one place: Add any chart to any dashboard
+- [February 2024](/changelog/2024/02/29.md): Device Vitals: Built-in metrics and out-of-the-box visualizations for stability, battery life and connectivity
+- [March 2024](/changelog/2024/03/31.md): Correlate Issues with Device Attributes
+- [April 2024](/changelog/2024/04/30.md): What's New: In-App Announcements
+- [May 2024](/changelog/2024/05/31.md): Memfault QuickStart: Up and running in minutes
+- [June 2024](/changelog/2024/06/30.md): Product Analytics for Embedded Devices: Understand product usage, performance, and reliability like never before
+- [July 2024](/changelog/2024/07/30.md): Dashboarding and Chart Filtering Improvements
+- [August 2024](/changelog/2024/08/30.md): Software Bill of Materials (SBOMs)
+- [September 2024](/changelog/2024/09/30.md): Get Notified When Devices In Your Fleet Go Offline
+- [October 2024](/changelog/2024/10/31.md): Sidebar Customization
+- [November 2024](/changelog/2024/11/30.md): New Four-Eyes Approval Process for OTA Updates
+- [December 2024](/changelog/2024/12/31.md): New Trace and Issue Summary Charts
+
+### 2025
+
+- [January 2025](/changelog/2025/01/31.md): Issue Charts Drilldown and Improved Tooltips
+- [February 2025](/changelog/2025/02/28.md): Improved Device Details Page
+- [March 2025](/changelog/2025/03/31.md): New Search Features to Quickly Triage Issues and Find Outliers
+- [April 2025](/changelog/2025/04/30.md): See the health of individual devices at a glance
+- [July 2025](/changelog/2025/07/31.md): A Summary of Fleet Health Delivered to your Inbox
+- [August 2025](/changelog/2025/08/31.md): Improved Linux Support
+- [September 2025](/changelog/2025/09/30.md): Highlights
+- [October 2025](/changelog/2025/10/31.md): General
+- [November 2025](/changelog/2025/11/30.md): Highlights
+- [December 2025](/changelog/2025/12/31.md): Highlights
+
+### 2026
+
+- [January 2026](/changelog/2026/01/31.md): General
+- [February 2026](/changelog/2026/02/28.md): Highlights
+- [March 2026](/changelog/2026/03/31.md): Highlights
+- [April 2026](/changelog/2026/04/30.md): Highlights
+- [May 2026](/changelog/2026/05/31.md): Highlights
+- [June 2026](/changelog/2026/06/30.md): Highlights
+- [July 2026](/changelog/2026/07/31.md): Highlights
+
+### archive
+
+Archive
+
+- [Archive](/changelog/archive.md): Archive
+
+## api
+
+# About
+
+- [Memfault API Documentation](/api.md): # About
+
+### artifacts
+
+Artifacts
+
+- [Artifacts](/api/artifacts.md): Artifacts
+
+### attach-sbom
+
+Attach a Software Bill of Materials (SBOM) to a **Project**.
+
+- [Attach SBOM](/api/attach-sbom.md): Attach a Software Bill of Materials (SBOM) to a **Project**.
+
+### auth
+
+Auth
+
+- [Auth](/api/auth.md): Auth
+
+### cohorts
+
+Cohorts
+
+- [Cohorts](/api/cohorts.md): Cohorts
+
+### commit-bugreport
+
+Process an Android Bug Report for a given **Project** after it has been uploaded using
+
+- [Commit Bugreport](/api/commit-bugreport.md): Process an Android Bug Report for a given **Project** after it has been uploaded using
+
+### commit-coredump
+
+Process a *Coredump* for a given **Project** after it has been uploaded using
+
+- [Commit Coredump](/api/commit-coredump.md): Process a *Coredump* for a given **Project** after it has been uploaded using
+
+### commit-custom-data-recording
+
+Process a [Custom Data Recording (CDR)](https://mflt.io/custom-data-recordings) for a given
+
+- [Commit Custom Data Recording](/api/commit-custom-data-recording.md): Process a [Custom Data Recording (CDR)](https://mflt.io/custom-data-recordings) for a given
+
+### commit-mar-file
+
+Process a *MAR Archive* file for a given **Project** after it has been uploaded using
+
+- [Commit MAR File](/api/commit-mar-file.md): Process a *MAR Archive* file for a given **Project** after it has been uploaded using
+
+### create-a-cohort
+
+Create a **Cohort** for the given **Project**
+
+- [Create a Cohort](/api/create-a-cohort.md): Create a **Cohort** for the given **Project**
+
+### create-a-deployment
+
+**Deploy** the given **Release** to the given **Cohort**
+
+- [Create a Deployment](/api/create-a-deployment.md): **Deploy** the given **Release** to the given **Cohort**
+
+### create-a-project
+
+Create a **Project** under the given **Organization**
+
+- [Create a Project](/api/create-a-project.md): Create a **Project** under the given **Organization**
+
+### create-a-release
+
+Create a **Release** for a given **Project**
+
+- [Create a Release](/api/create-a-release.md): Create a **Release** for a given **Project**
+
+### create-devices
+
+Create a single **Device** for a given **Project**
+
+- [Create Devices](/api/create-devices.md): Create a single **Device** for a given **Project**
+
+### create-software-type
+
+Create a **Software Type** for a given **Project**.
+
+- [Create Software Type](/api/create-software-type.md): Create a **Software Type** for a given **Project**.
+
+### create-software-version
+
+Create a **Software Version** for a given **Software Type** and **Project**.
+
+- [Create Software Version](/api/create-software-version.md): Create a **Software Version** for a given **Software Type** and **Project**.
+
+### delete-a-cohort
+
+Delete a single **Cohort**
+
+- [Delete a Cohort](/api/delete-a-cohort.md): Delete a single **Cohort**
+
+### delete-a-device
+
+Delete a single **Device**
+
+- [Delete a Device](/api/delete-a-device.md): Delete a single **Device**
+
+### delete-a-release
+
+Delete a single **Release**
+
+- [Delete a Release](/api/delete-a-release.md): Delete a single **Release**
+
+### delete-an-install
+
+Delete a single **Install**
+
+- [Delete an Install](/api/delete-an-install.md): Delete a single **Install**
+
+### delete-an-issue
+
+Delete a single **Issue**
+
+- [Delete an Issue](/api/delete-an-issue.md): Delete a single **Issue**
+
+### delete-project
+
+Delete a **Project** under a given **Organization**
+
+- [Delete Project](/api/delete-project.md): Delete a **Project** under a given **Organization**
+
+### deployments
+
+Deployments
+
+- [Deployments](/api/deployments.md): Deployments
+
+### devices
+
+Devices
+
+- [Devices](/api/devices.md): Devices
+
+### download-sbom
+
+Download a previously attached SBOM for a given **Project**.
+
+- [Download SBOM](/api/download-sbom.md): Download a previously attached SBOM for a given **Project**.
+
+### events
+
+Events
+
+- [Events](/api/events.md): Events
+
+### generate-user-api-key
+
+Generate (or re-generate) an API Key for logged in **User**.
+
+- [Generate User API Key](/api/generate-user-api-key.md): Generate (or re-generate) an API Key for logged in **User**.
+
+### get-project-client-key
+
+Return the **Project** Client Key
+
+- [Get Project Client Key](/api/get-project-client-key.md): Return the **Project** Client Key
+
+### get-project-data-routes
+
+Returns all **Project Keys** (Data Routes) for the given **Project**.
+
+- [Get Project Keys (Data Routes)](/api/get-project-data-routes.md): Returns all **Project Keys** (Data Routes) for the given **Project**.
+
+### get-symbol-file-by-gnu-build-id
+
+Download a previously uploaded ELF **Symbol File** given its GNU Build ID from `files.memfault.com`.
+
+- [Get Symbol File by GNU Build ID](/api/get-symbol-file-by-gnu-build-id.md): Download a previously uploaded ELF **Symbol File** given its GNU Build ID from `files.memfault.com`.
+
+### get-symbol-file-by-qcomm-build-id
+
+Download a previously uploaded ELF **Symbol File** given its Qualcomm ADK Build ID Number from `files.memfault.com`.
+
+- [Get Symbol File by Qualcomm ADK Build ID](/api/get-symbol-file-by-qcomm-build-id.md): Download a previously uploaded ELF **Symbol File** given its Qualcomm ADK Build ID Number from `files.memfault.com`.
+
+### get-task-status
+
+Get the status of the given *Task*
+
+- [Get Task Status](/api/get-task-status.md): Get the status of the given *Task*
+
+### get-user-api-key
+
+Get a previously generated API Key for the logged in **User**
+
+- [Get User API Key](/api/get-user-api-key.md): Get a previously generated API Key for the logged in **User**
+
+### installs
+
+Installs
+
+- [Installs](/api/installs.md): Installs
+
+### issues
+
+Issues
+
+- [Issues](/api/issues.md): Issues
+
+### list-cohorts
+
+List all **Cohorts** for the given **Project**
+
+- [List Cohorts](/api/list-cohorts.md): List all **Cohorts** for the given **Project**
+
+### list-deployments
+
+List all **Deployments** for the given **Project**
+
+- [List Deployments](/api/list-deployments.md): List all **Deployments** for the given **Project**
+
+### list-devices
+
+List all **Devices** for a given **Project**
+
+- [List Devices](/api/list-devices.md): List all **Devices** for a given **Project**
+
+### list-devices-in-a-cohort
+
+List the **Devices** in the given **Cohort**
+
+- [List Devices in a Cohort](/api/list-devices-in-a-cohort.md): List the **Devices** in the given **Cohort**
+
+### list-installs
+
+List all **Installs** for a given **Project**
+
+- [List Installs](/api/list-installs.md): List all **Installs** for a given **Project**
+
+### list-issues
+
+List all **Issues** for a given **Project**
+
+- [List Issues](/api/list-issues.md): List all **Issues** for a given **Project**
+
+### list-projects
+
+List the **Projects** under a given **Organization**
+
+- [List Projects](/api/list-projects.md): List the **Projects** under a given **Organization**
+
+### list-releases
+
+List all **Releases** for a given **Project**
+
+- [List Releases](/api/list-releases.md): List all **Releases** for a given **Project**
+
+### list-software-types
+
+List all **Software Types** for a given **Project**.
+
+- [List Software Types](/api/list-software-types.md): List all **Software Types** for a given **Project**.
+
+### list-software-versions
+
+List all **Software Versions** for a given **Software Type** and **Project**.
+
+- [List Software Versions](/api/list-software-versions.md): List all **Software Versions** for a given **Software Type** and **Project**.
+
+### me
+
+Return information about the logged in **User**
+
+- [Me](/api/me.md): Return information about the logged in **User**
+
+### move-devices-to-a-cohort
+
+Move **Devices** to the given **Cohort**
+
+- [Move Devices to a Cohort](/api/move-devices-to-a-cohort.md): Move **Devices** to the given **Cohort**
+
+### prepare-upload-basic-auth
+
+Prepare a file upload to `files.memfault.com` using Basic Auth. This is **step 1** of a two-step upload flow.
+
+- [Prepare Upload (Basic Auth)](/api/prepare-upload-basic-auth.md): Prepare a file upload to `files.memfault.com` using Basic Auth. This is **step 1** of a two-step upload flow.
+
+### prepare-upload-project-key
+
+Prepare a file upload to `files.memfault.com`. This is **step 1** of a two-step upload flow.
+
+- [Prepare Upload (using Project Key)](/api/prepare-upload-project-key.md): Prepare a file upload to `files.memfault.com`. This is **step 1** of a two-step upload flow.
+
+### projects
+
+Projects
+
+- [Projects](/api/projects.md): Projects
+
+### refresh-project-client-key
+
+Regenerate the **Project** Client Key
+
+- [Refresh Project Client Key](/api/refresh-project-client-key.md): Regenerate the **Project** Client Key
+
+### releases
+
+Releases
+
+- [Releases](/api/releases.md): Releases
+
+### reset-user-api-key
+
+Invalidate the previously generated API Key for the logged in **User** and do not create another one
+
+- [Reset User API key](/api/reset-user-api-key.md): Invalidate the previously generated API Key for the logged in **User** and do not create another one
+
+### retrieve-a-cohort
+
+Retrieve a single **Cohort**
+
+- [Retrieve a Cohort](/api/retrieve-a-cohort.md): Retrieve a single **Cohort**
+
+### retrieve-a-deployment
+
+Retrieve a single **Deployment**
+
+- [Retrieve a Deployment](/api/retrieve-a-deployment.md): Retrieve a single **Deployment**
+
+### retrieve-a-device
+
+Retrieve a single **Device**
+
+- [Retrieve a Device](/api/retrieve-a-device.md): Retrieve a single **Device**
+
+### retrieve-a-release
+
+Retrieve a single **Release**
+
+- [Retrieve a Release](/api/retrieve-a-release.md): Retrieve a single **Release**
+
+### retrieve-a-software-type
+
+Retrieve a single **Software Type** for a given **Project**.
+
+- [Retrieve a Software Type](/api/retrieve-a-software-type.md): Retrieve a single **Software Type** for a given **Project**.
+
+### retrieve-a-software-version
+
+Retrieve a **Software Version** for a given **Software Type** and **Project**.
+
+- [Retrieve a Software Version](/api/retrieve-a-software-version.md): Retrieve a **Software Version** for a given **Software Type** and **Project**.
+
+### retrieve-an-install
+
+Retrieve a single **Install**
+
+- [Retrieve an Install](/api/retrieve-an-install.md): Retrieve a single **Install**
+
+### retrieve-an-issue
+
+Retrieve a single **Issue**
+
+- [Retrieve an Issue](/api/retrieve-an-issue.md): Retrieve a single **Issue**
+
+### retrieve-device-attributes
+
+Retrieve **Device Attributes** for a given **Device**.
+
+- [Retrieve Device Attributes](/api/retrieve-device-attributes.md): Retrieve **Device Attributes** for a given **Device**.
+
+### retrieve-latest-release-for-a-device
+
+For a given **Device** (*Device Unique Identifier* and *Hardware Version*), return the latest **Release** that should be installed.
+
+- [Retrieve Latest Release for a Device](/api/retrieve-latest-release-for-a-device.md): For a given **Device** (*Device Unique Identifier* and *Hardware Version*), return the latest **Release** that should be installed.
+
+### retrieve-project
+
+Retrieve a **Project** under a given **Organization**
+
+- [Retrieve Project](/api/retrieve-project.md): Retrieve a **Project** under a given **Organization**
+
+### tasks
+
+Tasks
+
+- [Tasks](/api/tasks.md): Tasks
+
+### update-a-cohort
+
+Update a single **Cohort**
+
+- [Update a Cohort](/api/update-a-cohort.md): Update a single **Cohort**
+
+### update-a-deployment
+
+Update a single **Deployment**
+
+- [Update a Deployment](/api/update-a-deployment.md): Update a single **Deployment**
+
+### update-a-device
+
+Update a single **Device**
+
+- [Update a Device](/api/update-a-device.md): Update a single **Device**
+
+### update-a-release
+
+Update a single **Release**
+
+- [Update a Release](/api/update-a-release.md): Update a single **Release**
+
+### update-an-issue
+
+Update a single **Issue**
+
+- [Update an Issue](/api/update-an-issue.md): Update a single **Issue**
+
+### update-device-attributes
+
+Update one or more **Device Attributes** for a given **Device**.
+
+- [Update Device Attributes](/api/update-device-attributes.md): Update one or more **Device Attributes** for a given **Device**.
+
+### update-project
+
+Update a **Project** under a given **Organization**
+
+- [Update Project](/api/update-project.md): Update a **Project** under a given **Organization**
+
+### upload
+
+Upload
+
+- [Upload](/api/upload.md): Upload
+
+### upload-artifact-for-release
+
+Upload an **Artifact** for the given **Release** and *Hardware Revision*
+
+- [Upload Artifact for Release](/api/upload-artifact-for-release.md): Upload an **Artifact** for the given **Release** and *Hardware Revision*
+
+### upload-chunk
+
+Upload one or more **Chunks** for a given **Device** to `chunks.memfault.com`.
+
+- [Upload Chunk](/api/upload-chunk.md): Upload one or more **Chunks** for a given **Device** to `chunks.memfault.com`.
+
+### upload-events
+
+Upload many **Events** for a given **Project**
+
+- [Upload Events](/api/upload-events.md): Upload many **Events** for a given **Project**
+
+### upload-release-artifact
+
+Process a **Release Artifact** for a given **Project** after it has been uploaded using
+
+- [Upload Release Artifact](/api/upload-release-artifact.md): Process a **Release Artifact** for a given **Project** after it has been uploaded using
+
+### upload-symbol-file
+
+Process a **Symbol File** for a given **Project** after it has been uploaded using
+
+- [Upload Symbol File](/api/upload-symbol-file.md): Process a **Symbol File** for a given **Project** after it has been uploaded using
+
+### upload-trace
+
+Import a new **Trace** for a given **Project**.
+
+- [Upload Trace](/api/upload-trace.md): Import a new **Trace** for a given **Project**.
+
+## embed
+
+
+### android
+
+Blog
+
+- [Blog](/embed/android.md): Blog
+- [Getting Started](/embed/android/android-getting-started-guide.md)
+- [Archive](/embed/android/archive.md): Archive
+
+### linux
+
+Blog
+
+- [Blog](/embed/linux.md): Blog
+- [Archive](/embed/linux/archive.md): Archive
+- [Introduction](/embed/linux/introduction.md)
+- [Getting Started](/embed/linux/linux-getting-started-guide.md)
+
+### mcu
+
+Blog
+
+- [Blog](/embed/mcu.md): Blog
+- [Archive](/embed/mcu/archive.md): Archive
+- [ARM Cortex-M Integration Guide](/embed/mcu/arm-cortex-m-guide.md)
+- [ModusToolbox™ SDK for PSoC™ 6](/embed/mcu/arm-infineon-modustoolbox-guide.md)
+- [NXP MCUXpresso Getting Started Guide for ARM](/embed/mcu/arm-nxp-mcuxpresso-guide.md)
+- [DA1469x SDK Integration Guide](/embed/mcu/da1469x-sdk-guide.md)
+- [Embedded Integration Guide](/embed/mcu/embedded-self-serve.md)
+- [Espressif ESP32 ESP-IDF Integration Guide](/embed/mcu/espressif-esp32-guide.md)
+- [nRF Connect SDK Integration Guide](/embed/mcu/nordic-nrf-connect-sdk-guide.md)
+- [Pinnacle™ 100 Modem Integration Guide](/embed/mcu/pinnacle-100-guide.md)
+
+## search
+
+- [Search the documentation](/search.md)

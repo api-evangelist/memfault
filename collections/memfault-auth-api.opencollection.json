@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get authenticated user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/auth/me"
+          },
+          "docs": "Get authenticated user"
+        },
+        {
+          "info": {
+            "name": "Get user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/auth/api_key"
+          },
+          "docs": "Get user API key"
+        },
+        {
+          "info": {
+            "name": "Generate user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/auth/api_key"
+          },
+          "docs": "Generate user API key"
+        },
+        {
+          "info": {
+            "name": "Revoke user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.memfault.com/auth/api_key"
+          },
+          "docs": "Revoke user API key"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

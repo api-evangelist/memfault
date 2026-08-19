@@ -1,0 +1,182 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Cohorts API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cohorts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List cohorts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/cohorts",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List cohorts"
+        },
+        {
+          "info": {
+            "name": "Create a cohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/cohorts",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a cohort"
+        },
+        {
+          "info": {
+            "name": "Get a cohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/cohorts/:cohort_slug",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cohort_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a cohort"
+        },
+        {
+          "info": {
+            "name": "Update a cohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/cohorts/:cohort_slug",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cohort_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a cohort"
+        },
+        {
+          "info": {
+            "name": "List devices in a cohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/cohorts/:cohort_slug/devices",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cohort_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List devices in a cohort"
+        },
+        {
+          "info": {
+            "name": "Move devices into a cohort",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/cohorts/:cohort_slug/devices",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cohort_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Move devices into a cohort"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

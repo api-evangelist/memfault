@@ -1,0 +1,267 @@
+{
+  "item": [
+    {
+      "id": "0b3f0324-1216-4cbc-9d46-0ebb3d8a8544",
+      "name": "Files",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d3606674-1bea-43b2-8c24-defcf5755685",
+          "name": "Request file upload URL",
+          "request": {
+            "name": "Request file upload URL",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "upload"
+              ],
+              "host": [
+                "{{api-v0-upload-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "750a87d2-2214-46dd-846d-53113289a0a8",
+              "name": "Upload URL returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{api-v0-upload-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "364962d9-3a43-41b8-9c83-155d96a5c271",
+          "name": "Upload a coredump",
+          "request": {
+            "name": "Upload a coredump",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "upload",
+                "coredump"
+              ],
+              "host": [
+                "{{api-v0-upload-coredump-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e8ca9af-d406-46cf-9ad9-8dee90344b20",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "upload",
+                    "coredump"
+                  ],
+                  "host": [
+                    "{{api-v0-upload-coredump-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d2486c3-33ab-466b-a722-b84b22d435ab",
+          "name": "Upload a bug report",
+          "request": {
+            "name": "Upload a bug report",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "upload",
+                "bugreport"
+              ],
+              "host": [
+                "{{api-v0-upload-bugreport-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "06b48c3d-8316-4db2-b8e6-85671fa56628",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "upload",
+                    "bugreport"
+                  ],
+                  "host": [
+                    "{{api-v0-upload-bugreport-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.memfault.com",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://files.memfault.com",
+      "key": "api-v0-upload-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://files.memfault.com",
+      "key": "api-v0-upload-coredump-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://files.memfault.com",
+      "key": "api-v0-upload-bugreport-Url"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "04bd3430-9ea5-4998-b3f5-81badf41f2ea",
+    "name": "Memfault Cloud REST Auth Files API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Memfault Cloud REST API ingests device telemetry and exposes management for\norganizations, projects, devices, cohorts, software, releases, deployments,\nissues, and chunk ingestion. Endpoints are split across api.memfault.com (main),\nchunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),\nand ingress.memfault.com.\n\n\nContact Support:\n Name: Memfault",
+      "type": "text/plain"
+    }
+  }
+}

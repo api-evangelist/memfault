@@ -1,0 +1,193 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Releases API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Releases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List releases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/releases",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List releases"
+        },
+        {
+          "info": {
+            "name": "Create a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/releases",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a release"
+        },
+        {
+          "info": {
+            "name": "Get a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/releases/:release_version",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "release_version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a release"
+        },
+        {
+          "info": {
+            "name": "Update a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/releases/:release_version",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "release_version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a release"
+        },
+        {
+          "info": {
+            "name": "Delete a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/releases/:release_version",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "release_version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a release"
+        },
+        {
+          "info": {
+            "name": "Get the latest release for a device",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/releases/latest",
+            "params": [
+              {
+                "name": "hardware_version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "software_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "current_version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "device_serial",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Memfault-Project-Key",
+              "value": "{{Memfault-Project-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Used by devices (with project key auth) to discover the latest OTA release."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

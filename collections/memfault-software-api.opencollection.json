@@ -1,0 +1,126 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Software API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Software",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List software types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/software_types",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List software types"
+        },
+        {
+          "info": {
+            "name": "Create a software type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/software_types",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a software type"
+        },
+        {
+          "info": {
+            "name": "List software versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/software_types/:software_type/software_versions",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "software_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List software versions"
+        },
+        {
+          "info": {
+            "name": "Create a software version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/software_types/:software_type/software_versions",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "software_type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a software version"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

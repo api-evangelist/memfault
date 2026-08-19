@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memfault Cloud REST Auth Issues API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Issues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/issues",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List issues"
+        },
+        {
+          "info": {
+            "name": "Get an issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/issues/:issue_id",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issue_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an issue"
+        },
+        {
+          "info": {
+            "name": "Update an issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.memfault.com/api/v0/organizations/:organization_slug/projects/:project_slug/issues/:issue_id",
+            "params": [
+              {
+                "name": "organization_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "project_slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issue_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an issue"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
