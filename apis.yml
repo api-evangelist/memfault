@@ -53,6 +53,15 @@ apis:
   - Devices
   - Issues
   - Metrics
+  - Organization
+  - OTA
+  - Project
+  - Releases
+  tags_raw:
+  - Alerts
+  - Devices
+  - Issues
+  - Metrics
   - Organizations
   - OTA
   - Projects
@@ -68,6 +77,9 @@ apis:
   baseURL: https://api.memfault.com
   tags:
   - Administration
+  - Organization
+  tags_raw:
+  - Administration
   - Organizations
   properties:
   - type: Documentation
@@ -78,6 +90,9 @@ apis:
   humanURL: https://api-docs.memfault.com/#tag/Projects
   baseURL: https://api.memfault.com
   tags:
+  - Administration
+  - Project
+  tags_raw:
   - Administration
   - Projects
   properties:
@@ -104,6 +119,11 @@ apis:
   humanURL: https://api-docs.memfault.com/#tag/Releases
   baseURL: https://api.memfault.com
   tags:
+  - Deployment
+  - OTA
+  - Releases
+  - Software
+  tags_raw:
   - Deployments
   - OTA
   - Releases
@@ -167,6 +187,8 @@ apis:
   humanURL: https://api-docs.memfault.com/
   baseURL: https://api.memfault.com
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -197,6 +219,8 @@ apis:
   humanURL: https://api-docs.memfault.com/
   baseURL: https://api.memfault.com
   tags:
+  - Deployment
+  tags_raw:
   - Deployments
   properties:
   - type: OpenAPI
@@ -217,6 +241,8 @@ apis:
   humanURL: https://api-docs.memfault.com/
   baseURL: https://api.memfault.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -237,6 +263,8 @@ apis:
   humanURL: https://api-docs.memfault.com/
   baseURL: https://api.memfault.com
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
@@ -247,6 +275,8 @@ apis:
   humanURL: https://api-docs.memfault.com/
   baseURL: https://api.memfault.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
