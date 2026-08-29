@@ -4,6 +4,18 @@ description: Memfault is a device observability and reliability platform for con
   and Android. The Memfault Cloud ingests device data (coredumps, logs, metrics, reboots) and provides issue grouping, alerting,
   charting, fleet analytics, and over-the-air firmware updates. The Memfault REST API exposes organizations, projects, devices,
   software, releases, deployments, issues, alerts, metrics, and chunk ingestion endpoints.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
