@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Memfault Cloud REST Auth Deployments API
+  title: Memfault Cloud REST Deployments API
   description: 'The Memfault Cloud REST API ingests device telemetry and exposes management for
 
     organizations, projects, devices, cohorts, software, releases, deployments,
@@ -9,9 +9,7 @@ info:
 
     chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
 
-    and ingress.memfault.com.
-
-    '
+    and ingress.memfault.com.'
   version: v0
   contact:
     name: Memfault
@@ -40,6 +38,8 @@ paths:
       responses:
         '200':
           description: Paginated deployments
+      operationId: getApiV0OrganizationsByOrganizationSlugProjectsByProjectSlugDeployments
+      x-operation-id-source: derived
     post:
       tags:
       - Deployments
@@ -47,6 +47,8 @@ paths:
       responses:
         '201':
           description: Created
+      operationId: postApiV0OrganizationsByOrganizationSlugProjectsByProjectSlugDeployments
+      x-operation-id-source: derived
   /api/v0/organizations/{organization_slug}/projects/{project_slug}/deployments/{deployment_id}:
     parameters:
     - $ref: '#/components/parameters/OrgSlug'
@@ -63,6 +65,8 @@ paths:
       responses:
         '200':
           description: Deployment
+      operationId: getApiV0OrganizationsByOrganizationSlugProjectsByProjectSlugDeploymentsByDeploymentId
+      x-operation-id-source: derived
     patch:
       tags:
       - Deployments
@@ -70,16 +74,18 @@ paths:
       responses:
         '200':
           description: Updated
+      operationId: patchApiV0OrganizationsByOrganizationSlugProjectsByProjectSlugDeploymentsByDeploymentId
+      x-operation-id-source: derived
 components:
   parameters:
-    OrgSlug:
-      name: organization_slug
+    ProjectSlug:
+      name: project_slug
       in: path
       required: true
       schema:
         type: string
-    ProjectSlug:
-      name: project_slug
+    OrgSlug:
+      name: organization_slug
       in: path
       required: true
       schema:

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Memfault Cloud REST Auth Issues API
+  title: Memfault Cloud REST Issues API
   description: 'The Memfault Cloud REST API ingests device telemetry and exposes management for
 
     organizations, projects, devices, cohorts, software, releases, deployments,
@@ -9,9 +9,7 @@ info:
 
     chunks.memfault.com (chunk ingestion), files.memfault.com (large file uploads),
 
-    and ingress.memfault.com.
-
-    '
+    and ingress.memfault.com.'
   version: v0
   contact:
     name: Memfault
@@ -40,6 +38,8 @@ paths:
       responses:
         '200':
           description: Paginated issues
+      operationId: getApiV0OrganizationsByOrganizationSlugProjectsByProjectSlugIssues
+      x-operation-id-source: derived
   /api/v0/organizations/{organization_slug}/projects/{project_slug}/issues/{issue_id}:
     parameters:
     - $ref: '#/components/parameters/OrgSlug'
@@ -56,6 +56,8 @@ paths:
       responses:
         '200':
           description: Issue
+      operationId: getApiV0OrganizationsByOrganizationSlugProjectsByProjectSlugIssuesByIssueId
+      x-operation-id-source: derived
     patch:
       tags:
       - Issues
@@ -63,16 +65,18 @@ paths:
       responses:
         '200':
           description: Updated issue
+      operationId: patchApiV0OrganizationsByOrganizationSlugProjectsByProjectSlugIssuesByIssueId
+      x-operation-id-source: derived
 components:
   parameters:
-    OrgSlug:
-      name: organization_slug
+    ProjectSlug:
+      name: project_slug
       in: path
       required: true
       schema:
         type: string
-    ProjectSlug:
-      name: project_slug
+    OrgSlug:
+      name: organization_slug
       in: path
       required: true
       schema:

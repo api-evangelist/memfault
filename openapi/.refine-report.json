@@ -1,17 +1,7 @@
 {
   "provider": "memfault",
   "sources": [
-    "memfault-auth-api-openapi.yml",
-    "memfault-chunks-api-openapi.yml",
-    "memfault-cohorts-api-openapi.yml",
-    "memfault-deployments-api-openapi.yml",
-    "memfault-devices-api-openapi.yml",
-    "memfault-files-api-openapi.yml",
-    "memfault-issues-api-openapi.yml",
-    "memfault-organizations-api-openapi.yml",
-    "memfault-projects-api-openapi.yml",
-    "memfault-releases-api-openapi.yml",
-    "memfault-software-api-openapi.yml"
+    "_original/memfault-openapi.yml"
   ],
   "outputs": [
     "memfault-auth-api-openapi.yml",
@@ -29,6 +19,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "memfault-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "memfault-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-chunks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-cohorts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-deployments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-devices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-issues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-releases-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memfault-software-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
