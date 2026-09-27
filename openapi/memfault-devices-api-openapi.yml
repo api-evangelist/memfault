@@ -106,12 +106,6 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    ProjectSlug:
-      name: project_slug
-      in: path
-      required: true
-      schema:
-        type: string
     OrgSlug:
       name: organization_slug
       in: path
@@ -120,6 +114,12 @@ components:
         type: string
     DeviceSerial:
       name: device_serial
+      in: path
+      required: true
+      schema:
+        type: string
+    ProjectSlug:
+      name: project_slug
       in: path
       required: true
       schema:

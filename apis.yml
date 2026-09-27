@@ -82,48 +82,6 @@ apis:
   properties:
   - type: Documentation
     url: https://api-docs.memfault.com/
-- aid: memfault:memfault-organizations-api
-  name: Memfault Organizations API
-  description: >-
-    Manage Memfault organizations, users, and authentication tokens scoped to an organization.
-  humanURL: https://api-docs.memfault.com/#tag/Organizations
-  baseURL: https://api.memfault.com
-  tags:
-  - Administration
-  - Organization
-  tags_raw:
-  - Administration
-  - Organizations
-  properties:
-  - type: Documentation
-    url: https://api-docs.memfault.com/#tag/Organizations
-- aid: memfault:memfault-projects-api
-  name: Memfault Projects API
-  description: Create and manage Memfault projects that group devices, software, and releases.
-  humanURL: https://api-docs.memfault.com/#tag/Projects
-  baseURL: https://api.memfault.com
-  tags:
-  - Administration
-  - Project
-  tags_raw:
-  - Administration
-  - Projects
-  properties:
-  - type: Documentation
-    url: https://api-docs.memfault.com/#tag/Projects
-- aid: memfault:memfault-devices-api
-  name: Memfault Devices API
-  description: >-
-    List, search, and update devices including hardware version, software version, cohort membership,
-    and metadata.
-  humanURL: https://api-docs.memfault.com/#tag/Devices
-  baseURL: https://api.memfault.com
-  tags:
-  - Devices
-  - Fleet Management
-  properties:
-  - type: Documentation
-    url: https://api-docs.memfault.com/#tag/Devices
 - aid: memfault:memfault-software-releases-api
   name: Memfault Software and Releases API
   description: >-
@@ -144,17 +102,6 @@ apis:
   properties:
   - type: Documentation
     url: https://api-docs.memfault.com/#tag/Releases
-- aid: memfault:memfault-issues-api
-  name: Memfault Issues API
-  description: Retrieve and manage grouped issues created from device traces, coredumps, and reboots.
-  humanURL: https://api-docs.memfault.com/#tag/Issues
-  baseURL: https://api.memfault.com
-  tags:
-  - Crash Reporting
-  - Issues
-  properties:
-  - type: Documentation
-    url: https://api-docs.memfault.com/#tag/Issues
 - aid: memfault:memfault-alerts-api
   name: Memfault Alerts API
   description: >-
@@ -180,20 +127,6 @@ apis:
   properties:
   - type: Documentation
     url: https://api-docs.memfault.com/#tag/Metrics
-- aid: memfault:memfault-chunks-api
-  name: Memfault Chunks Ingestion API
-  description: >-
-    Upload chunks of data (events, traces, coredumps, metrics) from devices into Memfault, typically called
-    by on-device SDKs or a customer-operated proxy.
-  humanURL: https://docs.memfault.com/docs/mcu/data-from-firmware-to-the-cloud/
-  baseURL: https://chunks.memfault.com
-  tags:
-  - Chunks
-  - Ingestion
-  - Telemetry
-  properties:
-  - type: Documentation
-    url: https://docs.memfault.com/docs/mcu/data-from-firmware-to-the-cloud/
 - aid: memfault:memfault-auth-api
   name: Memfault Auth API
   description: The Auth API from Memfault — 2 operation(s) for auth.
@@ -207,15 +140,20 @@ apis:
   - type: OpenAPI
     url: openapi/memfault-auth-api-openapi.yml
 - aid: memfault:memfault-chunks-api
-  name: Memfault Chunks API
-  description: The Chunks API from Memfault — 1 operation(s) for chunks.
-  humanURL: https://api-docs.memfault.com/
-  baseURL: https://api.memfault.com
+  name: Memfault Chunks Ingestion API
+  description: Upload chunks of data (events, traces, coredumps, metrics) from devices into Memfault, typically
+    called by on-device SDKs or a customer-operated proxy.
+  humanURL: https://docs.memfault.com/docs/mcu/data-from-firmware-to-the-cloud/
+  baseURL: https://chunks.memfault.com
   tags:
   - Chunks
+  - Ingestion
+  - Telemetry
   properties:
   - type: OpenAPI
     url: openapi/memfault-chunks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.memfault.com/docs/mcu/data-from-firmware-to-the-cloud/
 - aid: memfault:memfault-cohorts-api
   name: Memfault Cohorts API
   description: The Cohorts API from Memfault — 3 operation(s) for cohorts.
@@ -240,14 +178,18 @@ apis:
     url: openapi/memfault-deployments-api-openapi.yml
 - aid: memfault:memfault-devices-api
   name: Memfault Devices API
-  description: The Devices API from Memfault — 3 operation(s) for devices.
-  humanURL: https://api-docs.memfault.com/
+  description: List, search, and update devices including hardware version, software version, cohort membership,
+    and metadata.
+  humanURL: https://api-docs.memfault.com/#tag/Devices
   baseURL: https://api.memfault.com
   tags:
   - Devices
+  - Fleet Management
   properties:
   - type: OpenAPI
     url: openapi/memfault-devices-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Devices
 - aid: memfault:memfault-files-api
   name: Memfault Files API
   description: The Files API from Memfault — 3 operation(s) for files.
@@ -262,38 +204,49 @@ apis:
     url: openapi/memfault-files-api-openapi.yml
 - aid: memfault:memfault-issues-api
   name: Memfault Issues API
-  description: The Issues API from Memfault — 2 operation(s) for issues.
-  humanURL: https://api-docs.memfault.com/
+  description: Retrieve and manage grouped issues created from device traces, coredumps, and reboots.
+  humanURL: https://api-docs.memfault.com/#tag/Issues
   baseURL: https://api.memfault.com
   tags:
   - Issues
+  - Crash Reporting
   properties:
   - type: OpenAPI
     url: openapi/memfault-issues-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Issues
 - aid: memfault:memfault-organizations-api
   name: Memfault Organizations API
-  description: The Organizations API from Memfault — 1 operation(s) for organizations.
-  humanURL: https://api-docs.memfault.com/
+  description: Manage Memfault organizations, users, and authentication tokens scoped to an organization.
+  humanURL: https://api-docs.memfault.com/#tag/Organizations
   baseURL: https://api.memfault.com
   tags:
   - Organization
+  - Administration
   tags_raw:
   - Organizations
+  - Administration
   properties:
   - type: OpenAPI
     url: openapi/memfault-organizations-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Organizations
 - aid: memfault:memfault-projects-api
   name: Memfault Projects API
-  description: The Projects API from Memfault — 3 operation(s) for projects.
-  humanURL: https://api-docs.memfault.com/
+  description: Create and manage Memfault projects that group devices, software, and releases.
+  humanURL: https://api-docs.memfault.com/#tag/Projects
   baseURL: https://api.memfault.com
   tags:
   - Project
+  - Administration
   tags_raw:
   - Projects
+  - Administration
   properties:
   - type: OpenAPI
     url: openapi/memfault-projects-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.memfault.com/#tag/Projects
 - aid: memfault:memfault-releases-api
   name: Memfault Releases API
   description: The Releases API from Memfault — 3 operation(s) for releases.

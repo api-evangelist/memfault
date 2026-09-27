@@ -69,14 +69,14 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    ProjectSlug:
-      name: project_slug
+    OrgSlug:
+      name: organization_slug
       in: path
       required: true
       schema:
         type: string
-    OrgSlug:
-      name: organization_slug
+    ProjectSlug:
+      name: project_slug
       in: path
       required: true
       schema:
