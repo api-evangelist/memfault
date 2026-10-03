@@ -112,14 +112,14 @@ components:
       required: true
       schema:
         type: string
-    DeviceSerial:
-      name: device_serial
+    ProjectSlug:
+      name: project_slug
       in: path
       required: true
       schema:
         type: string
-    ProjectSlug:
-      name: project_slug
+    DeviceSerial:
+      name: device_serial
       in: path
       required: true
       schema:
