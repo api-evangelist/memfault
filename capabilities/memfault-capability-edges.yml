@@ -1,0 +1,35 @@
+slug: memfault
+provider: Memfault
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Deployments
+  spec_file: memfault-deployments-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.75
+  evidence: 'POST .../deployments  Create a deployment; vendor: ''over-the-air firmware updates'''
+  reason: Creating and updating deployments of software releases to device cohorts is the orchestration
+    of delivering software changes to the fleet with controlled blast radius, i.e. Deployment Orchestration.
+- tag: Releases
+  spec_file: memfault-releases-api-openapi.yml
+  capability_id: BC-4210.30
+  capability_id_l1: BC-4210
+  capability_name: Release Engineering Management
+  confidence: 0.7
+  evidence: '"Create a release", "Update a release", "Delete a release", "Get the latest release for a
+    device" (releases keyed by {release_version})'
+  reason: Operations manage versioned firmware releases that devices resolve for OTA update, matching
+    release cadence/versioning discipline. Not certain whether deployment orchestration (BC-4210.40) is
+    the better fit since the Deployments surface is a separate tag, hence 0.7.

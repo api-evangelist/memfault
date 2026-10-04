@@ -268,6 +268,9 @@ apis:
   - type: OpenAPI
     url: openapi/memfault-software-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/memfault-capability-edges.yml
+  name: Memfault Business Capability Map
 - type: AgenticAccess
   url: agentic-access/memfault-agentic-access.yml
 - type: DomainSecurity
